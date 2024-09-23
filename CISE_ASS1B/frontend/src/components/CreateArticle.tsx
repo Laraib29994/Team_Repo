@@ -1,53 +1,57 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Book, DefaultEmptyBook } from "./Book";
+import { Article, DefaultEmptyArticle } from "./Article";
 
-const CreateBookComponent = () => {
+const CreateArticleComponent = () => {
   const navigate = useRouter();
 
-  const [book, setBook] = useState<Book>(DefaultEmptyBook);
+  const [article, setArticle] = useState<Article>(DefaultEmptyArticle);
 
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setBook({ ...book, [event.target.name]: event.target.value });
+    setArticle({ ...article, [event.target.name]: event.target.value });
   };
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    console.log(book);
-    fetch("http://localhost:8082/api/books", {method: 'POST', headers: {"Content-Type": "application/json"}, body: JSON.stringify(book)})
+    event.preventDefault();
+    console.log(article);
+    fetch("http://localhost:8082/api/articles", {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(article),
+    })
       .then((res) => {
         console.log(res);
-        setBook(DefaultEmptyBook);
+        setArticle(DefaultEmptyArticle);
         // Push to /
         navigate.push("/");
       })
       .catch((err) => {
-        console.log('Error from CreateBook: ' + err);
+        console.log('Error from CreateArticle: ' + err);
       });
   };
 
   return (
-    <div className="CreateBook">
+    <div className="CreateArticle">
       <div className="container">
         <div className="row">
           <div className="col-md-8 m-auto">
             <br />
             <Link href="/" className="btn btn-outline-warning float-left">
-              Show BooK List
+              Show Article List
             </Link>
           </div>
           <div className="col-md-10 m-auto">
-            <h1 className="display-4 text-center">Add Book</h1>
-            <p className="lead text-center">Create new book</p>
+            <h1 className="display-4 text-center">Add Article</h1>
+            <p className="lead text-center">Create new article</p>
             <form noValidate onSubmit={onSubmit}>
               <div className="form-group">
                 <input
                   type="text"
-                  placeholder="Title of the Book"
+                  placeholder="Title of the Article"
                   name="title"
                   className="form-control"
-                  value={book.title}
+                  value={article.title}
                   onChange={onChange}
                 />
               </div>
@@ -58,7 +62,7 @@ const CreateBookComponent = () => {
                   placeholder="ISBN"
                   name="isbn"
                   className="form-control"
-                  value={book.isbn}
+                  value={article.isbn}
                   onChange={onChange}
                 />
               </div>
@@ -69,7 +73,7 @@ const CreateBookComponent = () => {
                   placeholder="Author"
                   name="author"
                   className="form-control"
-                  value={book.author}
+                  value={article.author}
                   onChange={onChange}
                 />
               </div>
@@ -77,10 +81,10 @@ const CreateBookComponent = () => {
               <div className="form-group">
                 <input
                   type="text"
-                  placeholder="Describe this book"
+                  placeholder="Describe this article"
                   name="description"
                   className="form-control"
-                  value={book.description}
+                  value={article.description}
                   onChange={onChange}
                 />
               </div>
@@ -91,18 +95,18 @@ const CreateBookComponent = () => {
                   placeholder="published_date"
                   name="published_date"
                   className="form-control"
-                  value={book.published_date?.toString()}
+                  value={article.published_date?.toString()}
                   onChange={onChange}
                 />
               </div>
               <br />
               <div className="form-group">
-              <input
+                <input
                   type="text"
-                  placeholder="Publisher of this Book"
+                  placeholder="Publisher of this Article"
                   name="publisher"
                   className="form-control"
-                  value={book.publisher}
+                  value={article.publisher}
                   onChange={onChange}
                 />
               </div>
@@ -120,4 +124,4 @@ const CreateBookComponent = () => {
   );
 };
 
-export default CreateBookComponent;
+export default CreateArticleComponent;

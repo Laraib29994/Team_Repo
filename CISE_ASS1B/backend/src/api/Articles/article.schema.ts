@@ -1,15 +1,15 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Date, HydratedDocument } from 'mongoose';
 
-export type BookDocument = HydratedDocument<Book>;
+export type ArticleDocument = HydratedDocument<Article>;
 
 @Schema()
-export class Book {
+export class Article {
   @Prop({ required: true })
   title: string;
 
   @Prop({ required: true })
-  isbn: string;
+  descriptor: string;  // Changed from 'isbn' to 'descriptor'
 
   @Prop({ required: true })
   author: string;
@@ -27,4 +27,4 @@ export class Book {
   updated_date: Date;
 }
 
-export const BookSchema = SchemaFactory.createForClass(Book);
+export const ArticleSchema = SchemaFactory.createForClass(Article);

@@ -1,11 +1,11 @@
 'use client'
 
-import ShowBookList from "@/components/ShowBookList";
+import ShowArticlelist from "@/components/ShowArticlelist";
 
 export default function Home() {
   return (
     <main>
-      <ShowBookList />
+      <ShowArticlelist />
     </main>
   );
 }
