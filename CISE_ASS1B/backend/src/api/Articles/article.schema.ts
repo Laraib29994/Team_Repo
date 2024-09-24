@@ -5,26 +5,29 @@ export type ArticleDocument = HydratedDocument<Article>;
 
 @Schema()
 export class Article {
-  @Prop({ required: true })
-  title: string;
-
-  @Prop({ required: true })
-  descriptor: string;  // Changed from 'isbn' to 'descriptor'
-
-  @Prop({ required: true })
-  author: string;
+  @Prop()
+  title?: string;
 
   @Prop()
-  description: string;
+  authors?: string; // Changed from author to authors
+
+  @Prop()
+  DOI?: string;
 
   @Prop({ type: Date })
-  published_date: Date;
+  publication_year?: Date; // Changed from published_date to publication_year
 
   @Prop()
-  publisher: string;
+  volume?: string;
+
+  @Prop()
+  number?: number;
+
+  @Prop()
+  pages?: number;
 
   @Prop({ type: Date, default: Date.now })
-  updated_date: Date;
+  updated_date?: Date; // Optional, auto-set to the current date
 }
 
 export const ArticleSchema = SchemaFactory.createForClass(Article);

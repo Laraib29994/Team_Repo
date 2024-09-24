@@ -5,34 +5,39 @@ import Link from 'next/link';
 
 function UpdateArticleInfo() {
   const [article, setArticle] = useState<Article>(DefaultEmptyArticle);
-  const id = useParams<{ id: string }>().id;
-  const router = useRouter();
+  const { id } = useParams(); // Getting the article ID from URL params
+  const router = useRouter();  // For navigation
 
   useEffect(() => {
-    fetch(`http://localhost:8082/api/articles/${id}`)
+    // Fetching the article data based on the article ID
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles/${id}`)
       .then((res) => res.json())
       .then((json) => setArticle(json))
-      .catch((err) => console.log('Error from UpdateArticleInfo: ' + err));
+      .catch((err) => console.log('Error fetching article info: ', err));
   }, [id]);
 
+  // Handle input changes for text fields
   const inputOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setArticle({ ...article, [event.target.name]: event.target.value });
   };
 
+  // Handle input changes for text areas
   const textAreaOnChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setArticle({ ...article, [event.target.name]: event.target.value });
   };
 
+  // Handle form submission
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    fetch(`http://localhost:8082/api/articles/${id}`, {
+    // Sending the updated article info via PUT request
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(article),
     })
-      .then(() => router.push(`/show-article/${id}`))
-      .catch((err) => console.log('Error from UpdateArticleInfo: ' + err));
+      .then(() => router.push(`/show-article/${id}`)) // Navigate to article details after update
+      .catch((err) => console.log('Error updating article: ', err));
   };
 
   return (
@@ -47,7 +52,7 @@ function UpdateArticleInfo() {
           </div>
           <div className='col-md-8 m-auto'>
             <h1 className='display-4 text-center'>Edit Article</h1>
-            <p className='lead text-center'>Update Article's Info</p>
+            <p className='lead text-center'>Update the article's information</p>
           </div>
         </div>
 

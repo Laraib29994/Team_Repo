@@ -24,7 +24,7 @@ const ArticleCard = ({ article }: IProp) => {
       <div className='desc'>
         <h2>{article.title}</h2>
         <h3>{article.author}</h3>
-        <p>{article.description}</p>
+        <p>{article.DOI}</p>
       </div>
     </div>
   );

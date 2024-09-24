@@ -32,96 +32,107 @@ const CreateArticleComponent = () => {
   };
 
   return (
-    <div className="CreateArticle">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-8 m-auto">
+  <div className="CreateArticle">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-8 m-auto">
+          <br />
+          <Link href="/" className="btn btn-outline-warning float-left">
+            Show Article List
+          </Link>
+        </div>
+        <div className="col-md-10 m-auto">
+          <h1 className="display-4 text-center">Add Article</h1>
+          <p className="lead text-center">Create new article</p>
+          <form noValidate onSubmit={onSubmit}>
+            <div className="form-group">
+              <input
+                type="text"
+                placeholder="Title of the Article"
+                name="title"
+                className="form-control"
+                value={article.title}
+                onChange={onChange}
+              />
+            </div>
             <br />
-            <Link href="/" className="btn btn-outline-warning float-left">
-              Show Article List
-            </Link>
-          </div>
-          <div className="col-md-10 m-auto">
-            <h1 className="display-4 text-center">Add Article</h1>
-            <p className="lead text-center">Create new article</p>
-            <form noValidate onSubmit={onSubmit}>
-              <div className="form-group">
-                <input
-                  type="text"
-                  placeholder="Title of the Article"
-                  name="title"
-                  className="form-control"
-                  value={article.title}
-                  onChange={onChange}
-                />
-              </div>
-              <br />
-              <div className="form-group">
-                <input
-                  type="text"
-                  placeholder="ISBN"
-                  name="isbn"
-                  className="form-control"
-                  value={article.isbn}
-                  onChange={onChange}
-                />
-              </div>
-              <br />
-              <div className="form-group">
-                <input
-                  type="text"
-                  placeholder="Author"
-                  name="author"
-                  className="form-control"
-                  value={article.author}
-                  onChange={onChange}
-                />
-              </div>
-              <br />
-              <div className="form-group">
-                <input
-                  type="text"
-                  placeholder="Describe this article"
-                  name="description"
-                  className="form-control"
-                  value={article.description}
-                  onChange={onChange}
-                />
-              </div>
-              <br />
-              <div className="form-group">
-                <input
-                  type="date"
-                  placeholder="published_date"
-                  name="published_date"
-                  className="form-control"
-                  value={article.published_date?.toString()}
-                  onChange={onChange}
-                />
-              </div>
-              <br />
-              <div className="form-group">
-                <input
-                  type="text"
-                  placeholder="Publisher of this Article"
-                  name="publisher"
-                  className="form-control"
-                  value={article.publisher}
-                  onChange={onChange}
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn btn-outline-warning btn-block mt-4 mb-4 w-100"
-              >
-                Submit
-              </button>
-            </form>
-          </div>
+            <div className="form-group">
+              <input
+                type="text"
+                placeholder="Authors"
+                name="authors"
+                className="form-control"
+                value={article.authors}
+                onChange={onChange}
+              />
+            </div>
+            <br />
+            <div className="form-group">
+              <input
+                type="text"
+                placeholder="DOI"
+                name="DOI"
+                className="form-control"
+                value={article.DOI}
+                onChange={onChange}
+              />
+            </div>
+            <br />
+            <div className="form-group">
+              <input
+                type="date"
+                placeholder="Published Date"
+                name="published_date"
+                className="form-control"
+                value={article.published_date?.toString()}
+                onChange={onChange}
+              />
+            </div>
+            <br />
+            <div className="form-group">
+              <input
+                type="text"
+                placeholder="Volume"
+                name="volume"
+                className="form-control"
+                value={article.volume}
+                onChange={onChange}
+              />
+            </div>
+            <br />
+            <div className="form-group">
+              <input
+                type="number"
+                placeholder="Number"
+                name="number"
+                className="form-control"
+                value={article.number || ''}
+                onChange={onChange}
+              />
+            </div>
+            <br />
+            <div className="form-group">
+              <input
+                type="number"
+                placeholder="Pages"
+                name="pages"
+                className="form-control"
+                value={article.pages || ''}
+                onChange={onChange}
+              />
+            </div>
+            <button
+              type="submit"
+              className="btn btn-outline-warning btn-block mt-4 mb-4 w-100"
+            >
+              Submit
+            </button>
+          </form>
         </div>
       </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default CreateArticleComponent;
