@@ -1,0 +1,42 @@
+/* CreateArticle.css */
+.CreateArticle {
+  background: linear-gradient(to right, #1e3c72, #2a5298); /* Blue gradient */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btn {
+  border-radius: 5px;
+}
+
+.btn-outline-warning {
+  color: #ffc107;
+  border-color: #ffc107;
+}
+
+.btn-outline-warning:hover {
+  background-color: #ffc107;
+  color: white;
+}
