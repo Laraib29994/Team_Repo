@@ -6,7 +6,7 @@ import Link from 'next/link';
 function UpdateArticleInfo() {
   const [article, setArticle] = useState<Article>(DefaultEmptyArticle);
   const { id } = useParams(); // Getting the article ID from URL params
-  const router = useRouter();  // For navigation
+  const router = useRouter(); // For navigation
 
   useEffect(() => {
     // Fetching the article data based on the article ID
@@ -72,51 +72,90 @@ function UpdateArticleInfo() {
             <br />
 
             <div className='form-group'>
-              <label htmlFor='author'>Author</label>
+              <label htmlFor='authors'>Authors</label>
               <input
                 type='text'
-                placeholder='Author'
-                name='author'
+                placeholder='Authors'
+                name='authors'
                 className='form-control'
-                value={article.author}
+                value={article.authors}
                 onChange={inputOnChange}
               />
             </div>
             <br />
 
             <div className='form-group'>
-              <label htmlFor='descriptor'>Descriptor</label>
-              <textarea
-                placeholder='Description of the Article'
-                name='descriptor'
+              <label htmlFor='DOI'>DOI</label>
+              <input
+                type='text'
+                placeholder='DOI'
+                name='DOI'
                 className='form-control'
-                value={article.descriptor}
+                value={article.DOI}
+                onChange={inputOnChange}
+              />
+            </div>
+            <br />
+
+            <div className='form-group'>
+              <label htmlFor='content'>Content</label>
+              <textarea
+                placeholder='Content of the Article'
+                name='content'
+                className='form-control'
+                value={article.content}
                 onChange={textAreaOnChange}
               />
             </div>
             <br />
 
             <div className='form-group'>
-              <label htmlFor='published_date'>Published Date</label>
+              <label htmlFor='publication_year'>Publication Year</label>
               <input
-                type='text'
-                placeholder='Published Date'
-                name='published_date'
+                type='date'
+                placeholder='Publication Year'
+                name='publication_year'
                 className='form-control'
-                value={article.published_date?.toString()}
+                value={article.publication_year?.toString().split('T')[0] || ''}
                 onChange={inputOnChange}
               />
             </div>
             <br />
 
             <div className='form-group'>
-              <label htmlFor='publisher'>Publisher</label>
+              <label htmlFor='volume'>Volume</label>
               <input
                 type='text'
-                placeholder='Publisher of the Article'
-                name='publisher'
+                placeholder='Volume'
+                name='volume'
                 className='form-control'
-                value={article.publisher}
+                value={article.volume}
+                onChange={inputOnChange}
+              />
+            </div>
+            <br />
+
+            <div className='form-group'>
+              <label htmlFor='number'>Number</label>
+              <input
+                type='number'
+                placeholder='Number'
+                name='number'
+                className='form-control'
+                value={article.number || ''}
+                onChange={inputOnChange}
+              />
+            </div>
+            <br />
+
+            <div className='form-group'>
+              <label htmlFor='pages'>Pages</label>
+              <input
+                type='number'
+                placeholder='Pages'
+                name='pages'
+                className='form-control'
+                value={article.pages || ''}
                 onChange={inputOnChange}
               />
             </div>

@@ -1,12 +1,13 @@
 import { Date } from 'mongoose';
 
 export class CreateArticleDto {
-  title?: string;
-  authors?: string; // Changed from 'author' to 'authors'
-  DOI?: string;
-  publication_year?: Date; // Keep this as Date for consistency
-  volume?: string;
-  number?: number; // Changed from int to number
-  pages?: number; // Changed from int to number
-  updated_date?: Date; // Made optional, consistent with Article type
+  title?: string;               // Title of the article (optional)
+  authors?: string;             // Authors of the article (optional)
+  DOI?: string;                 // DOI (Digital Object Identifier) (optional)
+  publication_year?: Date;      // Publication year as a Date object (optional)
+  volume?: string;              // Volume number (string to support formats) (optional)
+  number?: number;              // Issue number (using number type) (optional)
+  pages?: number;               // Number of pages (using number type) (optional)
+  content?: string;             // Content of the article (optional)
+  updated_date?: Date;          // Updated date (optional for consistency)
 }

@@ -9,7 +9,7 @@ function ShowArticleDetails() {
   const [article, setArticle] = useState<Article>(DefaultEmptyArticle);
 
   const { id } = useParams(); // Get the article ID from the URL
-  const router = useRouter();  // Use router for navigation
+  const router = useRouter(); // Use router for navigation
 
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles/${id}`)
@@ -54,7 +54,7 @@ function ShowArticleDetails() {
           <tr>
             <th scope='row'>4</th>
             <td>Publication Year</td>
-            <td>{article.publication_year?.toLocaleDateString()}</td>
+            <td>{article.publication_year?.toString()}</td>
           </tr>
           <tr>
             <th scope='row'>5</th>
@@ -73,6 +73,11 @@ function ShowArticleDetails() {
           </tr>
           <tr>
             <th scope='row'>8</th>
+            <td>Content</td>
+            <td>{article.content}</td> {/* Added content field */}
+          </tr>
+          <tr>
+            <th scope='row'>9</th>
             <td>Updated Date</td>
             <td>{article.updated_date?.toString()}</td>
           </tr>
