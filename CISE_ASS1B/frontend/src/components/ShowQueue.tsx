@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import ArticleCard from './ArticleCard';
+import QueueCard from './QueueCard';
 import { Article } from './Article';
 import './ShowArticleList.css';
 
@@ -23,7 +23,7 @@ function ShowQueue() {
   const articleList =
     articles.length === 0
       ? 'There is no pending article record!'
-      : articles.map((article, k) => <ArticleCard article={article} key={k} />);
+      : articles.map((article, k) => <QueueCard article={article} key={k} />);
 
   return (
     <div className='ShowQueue'>
