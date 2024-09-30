@@ -81,6 +81,11 @@ function ShowArticleDetails() {
             <td>Updated Date</td>
             <td>{article.updated_date?.toString()}</td>
           </tr>
+          <tr>
+            <th scope='row'>9</th>
+            <td>Status</td>
+            <td>{article.status}</td>
+          </tr>
         </tbody>
       </table>
     </div>

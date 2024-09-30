@@ -10,4 +10,5 @@ export class CreateArticleDto {
   pages?: number;               // Number of pages (using number type) (optional)
   content?: string;             // Content of the article (optional)
   updated_date?: Date;          // Updated date (optional for consistency)
+  status?: String;              //added status for que
 }

@@ -20,8 +20,12 @@ export class ArticleService {
     return await this.articleModel.findById(id).exec();
   }
 
-  async create(createArticleDto: CreateArticleDto) {
-    return await this.articleModel.create(createArticleDto);
+  async create(createArticleDto: CreateArticleDto): Promise<Article> {
+    const createdArticle = new this.articleModel({
+      ...createArticleDto,
+      status: 'Pending', // Assign 'Pending' status here
+    });
+    return await createdArticle.save();
   }
 
   async update(id: string, createArticleDto: CreateArticleDto) {
