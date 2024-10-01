@@ -1,12 +1,55 @@
 import React, { useState } from 'react';
-import { Book } from './Book';
+import { Article } from './Article'; // Updated to import Article instead of Book
 
-interface DateFilterProps{
-    books: Book[];
-    setFilteredBooks: React.Dispatch<React.SetStateAction<Book[]>>;
+interface DateFilterProps {
+    articles: Article[]; // Changed from Book[] to Article[]
+    setFilteredArticles: React.Dispatch<React.SetStateAction<Article[]>>; // Updated state type
 }
 
+const DateFilter: React.FC<DateFilterProps> = ({ articles, setFilteredArticles }) => {
+    const [year, setYear] = useState<string>('');
 
+    const handleFilterChange = () => {
+        const filtered = articles.filter(article => {
+            // Ensure published_date is defined and in the correct format
+            if (!article.published_date) {
+                return false; // Exclude articles with undefined published_date
+            }
+
+            const publishedDate = new Date(article.published_date);
+            const publishedYear = publishedDate.getFullYear();
+
+            console.log(`Article: ${article.title}, Published Year: ${publishedYear}, Filter Year: ${year}`); // Log the values
+
+            // Check if the published year matches the selected year
+            return year ? publishedYear === parseInt(year) : true;
+        });
+
+        console.log(`Filtered Articles: `, filtered); // Log filtered articles
+        setFilteredArticles(filtered);
+    };
+
+    return (
+        <div className='date-filter'>
+            <div className='flex space-x-4'>
+                <p style={{ color: 'white' }}>Published Year</p>
+                <input
+                    type="number"
+                    placeholder="YYYY"
+                    value={year}
+                    onChange={e => {
+                        setYear(e.target.value);
+                        handleFilterChange(); // Update the filter on change
+                    }}
+                    className="p-2 border rounded w-24"
+                />
+            </div>
+        </div>
+    );
+};
+
+export default DateFilter;
+/*
 const DateFilter: React.FC<DateFilterProps> = ({ books, setFilteredBooks }) => {
     const [startDate, setStartDate] = useState<string>('');
     const [endDate, setEndDate] = useState<string>('');
@@ -56,3 +99,4 @@ const DateFilter: React.FC<DateFilterProps> = ({ books, setFilteredBooks }) => {
 };
 
 export default DateFilter;
+*/

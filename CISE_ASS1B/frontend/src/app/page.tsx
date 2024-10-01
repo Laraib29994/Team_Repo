@@ -1,32 +1,29 @@
 'use client'
 
-import { useState, useEffect} from 'react';
-import ShowBookList from "@/components/ShowBookList";
-import { Book } from "@/components/Book";
-
-
+import { useState, useEffect } from 'react';
+import ShowArticleList from "@/components/ShowArticleList";
+import { Article } from "@/components/Article";
 
 export default function Home() {
-  const [books, setBooks] = useState<Book[]>([]);
-  const [filteredBooks, setFilteredBooks] = useState<Book[]>([]);
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:8082/api/books')
-    .then((res) => res.json())
-    .then((data) => {
-      setBooks(data);
-      setFilteredBooks(data);
-    })
-    .catch((err) => {
-      console.log('Error fetching books: ' + err);
-    });
+    fetch('http://localhost:8082/api/articles') // Updated API endpoint to /articles
+      .then((res) => res.json())
+      .then((data) => {
+        setArticles(data);
+        setFilteredArticles(data);
+      })
+      .catch((err) => {
+        console.log('Error fetching articles: ' + err); // Updated error message
+      });
 
   }, []);
 
-  
   return (
     <main>
-      <ShowBookList books={filteredBooks} />      
+      <ShowArticleList articles={filteredArticles} /> {/* Updated prop name */}
     </main>
   );
 }
