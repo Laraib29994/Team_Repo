@@ -42,9 +42,25 @@ const QueueCard = ({ article }: IProp) => {
     }
   };
 
-  const handleReject = (e: React.MouseEvent) => {
+  const handleReject = async (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent triggering the card's onClick event
     console.log(`Article rejected: ${article.title}`);
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles/${article._id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        router.push('/'); // Navigate back to the article list after deletion
+        console.log(`Article deleted: ${article.title}`);
+      } else {
+        console.error('Failed to delete the article');
+      }
+    } catch (err) {
+      console.error('Error deleting article:', err);
+      alert('Failed to delete the article. Please try again.');
+    }
   };
 
   return (
@@ -65,7 +81,7 @@ const QueueCard = ({ article }: IProp) => {
           <button onClick={handleApprove} disabled={status === 'approved'}>
             {status === 'approved' ? 'Approved' : 'Approve'}
           </button>
-          <button onClick={handleReject}>Reject</button>
+          <button onClick={handleReject}>Delete</button>
         </div>
       </div>
     </div>
