@@ -33,6 +33,12 @@ function ShowQueue() {
             <br />
             <h2 className='display-4 text-center'>Pending Articles List</h2>
           </div>
+          <div className='col-md-10 m-auto'>
+            <br /> <br />
+            <Link href='/' className='btn btn-outline-warning float-left'>
+              Show Article List
+            </Link>
+          </div>
 
           <div className='col-md-11'>
             <Link
