@@ -52,7 +52,7 @@ function UpdateArticleInfo() {
           </div>
           <div className='col-md-8 m-auto'>
             <h1 className='display-4 text-center'>Edit Article</h1>
-            <p className='lead text-center'>Update the article's information</p>
+            <p className='lead text-center'>Update the article&apos;s information</p>
           </div>
         </div>
 
