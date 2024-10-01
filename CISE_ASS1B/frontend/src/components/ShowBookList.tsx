@@ -3,6 +3,7 @@ import Link from 'next/link';
 import BookCard from './BookCard';
 import { Book } from './Book';
 
+
 function ShowBookList() {
   const [books, setBooks] = useState<[Book?]>([]);
 
@@ -30,7 +31,8 @@ function ShowBookList() {
             <div className='row'>
               <div className='col-md-12'>
                 <br />
-                <h2 className='display-4 text-center'>Books List</h2>
+                <h2 className='title'>SPEED</h2>
+                <h3 className='title2'> Software Practice Empirical Evidence Database</h3>
               </div>
     
               <div className='col-md-11'>
