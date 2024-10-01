@@ -9,28 +9,29 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { BookService } from './book.service';
-import { CreateBookDto } from './create-book.dto';
+import { ArticleService } from './article.service';
+import { CreateArticleDto } from './create-article.dto';
 import { error } from 'console';
 
-@Controller('api/books')
-export class BookController {
-  constructor(private readonly bookService: BookService) {}
+@Controller('api/articles')
+export class ArticleController {
+  constructor(private readonly articleService: ArticleService) {}
 
   @Get('/test')
   test() {
-    return this.bookService.test();
+    return this.articleService.test();
   }
-  // Get all books
+
+  // Get all articles
   @Get('/')
   async findAll() {
     try {
-      return this.bookService.findAll();
+      return this.articleService.findAll();
     } catch {
       throw new HttpException(
         {
           status: HttpStatus.NOT_FOUND,
-          error: 'No Books found',
+          error: 'No Articles found',
         },
         HttpStatus.NOT_FOUND,
         { cause: error },
@@ -38,33 +39,34 @@ export class BookController {
     }
   }
 
-  // Get one book via id
+  // Get one article by id
   @Get('/:id')
   async findOne(@Param('id') id: string) {
     try {
-      return this.bookService.findOne(id);
+      return this.articleService.findOne(id);
     } catch {
       throw new HttpException(
         {
           status: HttpStatus.NOT_FOUND,
-          error: 'No Book found',
+          error: 'No Article found',
         },
         HttpStatus.NOT_FOUND,
         { cause: error },
       );
     }
   }
-  // Create/add a book
+
+  // Create/add an article
   @Post('/')
-  async addBook(@Body() createBookDto: CreateBookDto) {
+  async addArticle(@Body() createArticleDto: CreateArticleDto) {
     try {
-      await this.bookService.create(createBookDto);
-      return { message: 'Book added successfully' };
+      await this.articleService.create(createArticleDto);
+      return { message: 'Article added successfully' };
     } catch {
       throw new HttpException(
         {
           status: HttpStatus.BAD_REQUEST,
-          error: 'Unable to add this book',
+          error: 'Unable to add this article',
         },
         HttpStatus.BAD_REQUEST,
         { cause: error },
@@ -72,20 +74,20 @@ export class BookController {
     }
   }
 
-  // Update a book
+  // Update an article
   @Put('/:id')
-  async updateBook(
+  async updateArticle(
     @Param('id') id: string,
-    @Body() createBookDto: CreateBookDto,
+    @Body() createArticleDto: CreateArticleDto,
   ) {
     try {
-      await this.bookService.update(id, createBookDto);
-      return { message: 'Book updated successfully' };
+      await this.articleService.update(id, createArticleDto);
+      return { message: 'Article updated successfully' };
     } catch {
       throw new HttpException(
         {
           status: HttpStatus.BAD_REQUEST,
-          error: 'Unable to update this book',
+          error: 'Unable to update this article',
         },
         HttpStatus.BAD_REQUEST,
         { cause: error },
@@ -93,16 +95,16 @@ export class BookController {
     }
   }
 
-  // Delete a book via id
+  // Delete an article by id
   @Delete('/:id')
-  async deleteBook(@Param('id') id: string) {
+  async deleteArticle(@Param('id') id: string) {
     try {
-      return await await this.bookService.delete(id);
+      return await this.articleService.delete(id);
     } catch {
       throw new HttpException(
         {
           status: HttpStatus.NOT_FOUND,
-          error: 'No such a book',
+          error: 'No such article found',
         },
         HttpStatus.NOT_FOUND,
         { cause: error },
