@@ -12,11 +12,11 @@
     transition: top 0.5s;
     height: fit-content;
   }
-  
+
   .hide {
     top: -3em;
   }
-  
+
   .navitem {
     position: relative;
     padding: 1em;
@@ -27,12 +27,12 @@
     cursor: default;
     white-space: nowrap;
   }
-  
+
   .clickable {
     @extend .navitem;
     cursor: pointer;
   }
-  
+
   .clickable:hover {
     backdrop-filter: brightness(50%);
 }

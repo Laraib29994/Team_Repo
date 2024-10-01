@@ -1,13 +1,13 @@
 /* CreateArticle.css */
 .CreateArticle {
-  background: linear-gradient(to right, #1e3c72, #2a5298); /* Blue gradient */
+  background: linear-gradient(to right, #f3eeed, #90a5c4); /* Blue gradient */
   color: white;
   padding: 20px;
   border-radius: 10px;
 }
 
 .container {
-  max-width: 800px;
+  /*max-width: 800px;*/
   margin: auto;
 }
 
@@ -16,6 +16,31 @@
   flex-direction: column;
   align-items: center;
 }
+.logo-container {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+}
+
+.logo {
+  color: #004aad;
+  margin-right: 10px;
+  text-align:left;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.smalltext {
+  color:black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.title {
+  color: #004aad;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 
 .form-group {
   margin-bottom: 15px;
