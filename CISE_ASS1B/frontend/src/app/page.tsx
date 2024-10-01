@@ -1,11 +1,13 @@
 'use client'
 
-import ShowBookList from "@/components/ShowBookList";
+import ShowArticlelist from "@/components/ShowArticlelist";
+import Navbar from "@/components/Nav/Navbar.tsx";
 
 export default function Home() {
   return (
     <main>
-      <ShowBookList />
+        <Navbar />
+      <ShowArticlelist />
     </main>
   );
 }
