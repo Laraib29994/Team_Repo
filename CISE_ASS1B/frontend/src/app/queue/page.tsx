@@ -1,11 +1,11 @@
 'use client'
 
-import ShowArticleList from "@/components/ShowArticleList";
+import ShowQueue from "@/components/ShowQueue";
 
 export default function Home() {
   return (
     <main>
-      <ShowArticleList/>
+      <ShowQueue />
     </main>
   );
 }

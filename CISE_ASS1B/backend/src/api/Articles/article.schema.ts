@@ -31,6 +31,13 @@ export class Article {
 
   @Prop({ type: Date, default: Date.now })
   updated_date?: Date; // Optional, auto-set to the current date
+
+  @Prop({
+    type: String,
+    enum: ['Pending', 'Approved', 'Rejected'],
+    default: 'Pending'
+  })
+  status: string;
 }
 
 export const ArticleSchema = SchemaFactory.createForClass(Article);
