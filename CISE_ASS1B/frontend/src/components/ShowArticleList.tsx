@@ -54,21 +54,13 @@ function ShowArticleList() {
 
           <div className='col-md-11'>
             <Link
-              href='/create-article'
-              className='btn btn-outline-warning float-right'
-            >
-              + Add New Article
-            </Link>
-            <br />
-            <br />
-            <hr />
-          </div>
-          <div className='queue'>
-            <Link
               href='/queue'
               style={queueButtonStyle}
             >
               {queueButtonContent}
+            </Link>
+            <Link href='/create-article' className='btn btn-outline-warning float-right'>
+              + Add New Article
             </Link>
             <br />
             <br />
