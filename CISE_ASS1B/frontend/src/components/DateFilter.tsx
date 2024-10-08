@@ -1,30 +1,29 @@
 import React, { useState } from 'react';
-import { Book } from './Book';
+import { Article } from './Article';
 
-interface DateFilterProps{
-    books: Book[];
-    setFilteredBooks: React.Dispatch<React.SetStateAction<Book[]>>;
+interface DateFilterProps {
+    articles: Article[];
+    setFilteredArticles: React.Dispatch<React.SetStateAction<Article[]>>;
 }
 
-
-const DateFilter: React.FC<DateFilterProps> = ({ books, setFilteredBooks }) => {
+const DateFilter: React.FC<DateFilterProps> = ({ articles, setFilteredArticles }) => {
     const [startDate, setStartDate] = useState<string>('');
     const [endDate, setEndDate] = useState<string>('');
 
     const handleFilterChange = () => {
-        const filtered = books.filter(book => {
-            const publishedDate = book.published_date instanceof Date 
-                ? book.published_date 
+        const filtered = articles.filter(article => {
+            const publicationYear = article.publication_year instanceof Date
+                ? article.publication_year
                 : new Date();
 
-            // Check if the published date is within the selected range
-            const isAfterStartDate = startDate ? publishedDate >= new Date(startDate) : true;
-            const isBeforeEndDate = endDate ? publishedDate <= new Date(endDate) : true;
+            // Check if the publication year is within the selected range
+            const isAfterStartDate = startDate ? publicationYear >= new Date(startDate) : true;
+            const isBeforeEndDate = endDate ? publicationYear <= new Date(endDate) : true;
 
             return isAfterStartDate && isBeforeEndDate;
         });
 
-        setFilteredBooks(filtered);
+        setFilteredArticles(filtered);
     };
 
     return (
