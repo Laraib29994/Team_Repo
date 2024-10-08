@@ -42,10 +42,14 @@ function ShowArticleList() {
   return (
     <div className='ShowArticleList'>
       <div className='container'>
+      <div className="logo-container">
+      <h1 className="logo">SPEED</h1>
+      <p className="smalltext">Software Practice Empiracal Evidence Database</p>
+        </div>
         <div className='row'>
           <div className='col-md-12'>
             <br />
-            <h2 className='display-4 text-center'>Articles List</h2>
+            <h1 className='title'>Articles List</h1>
           </div>
 
           <div className='col-md-11'>

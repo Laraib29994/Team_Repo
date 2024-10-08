@@ -35,16 +35,21 @@ const CreateArticleComponent = () => {
   return (
     <div className="CreateArticle">
       <div className="container">
+        <div className="logo-container">
+      <h1 className="logo">SPEED</h1>
+      <p className="smalltext">Software Practice Empiracal Evidence Database</p>
+        </div>
         <div className="row">
           <div className="col-md-8 m-auto">
             <br />
-            <Link href="/" className="btn btn-outline-warning float-left">
+            <Link href="/" className="btn btn-outline-warning float-right">
               Show Article List
             </Link>
           </div>
           <div className="col-md-10 m-auto">
-            <h1 className="display-4 text-center">Add Article</h1>
-            <p className="lead text-center">Create new article</p>
+            <h1 className="title">ARTICLE SUBMISSION</h1>
+            <p className="smalltext">Choose how you would like to submit your article:</p>
+
             <form noValidate onSubmit={onSubmit}>
               <div className="form-group">
                 <input

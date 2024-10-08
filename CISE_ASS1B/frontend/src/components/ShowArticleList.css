@@ -1,17 +1,42 @@
 .ShowArticleList {
     padding: 20px;
-    background-color: #f8f9fa;
+    background: linear-gradient(to right, #f3eeed, #90a5c4); /* Blue gradient */
+    border-radius: 10px;
   }
 
   .container {
-    max-width: 1200px;
-    margin: 0 auto;
+   /* max-width: 1200px;*/
+    margin: auto;
   }
 
+  .logo-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+  }
   .row {
     display: flex;
     flex-wrap: wrap;
     margin: 0 -15px;
+  }
+
+  .logo {
+    color: #004aad;
+    margin-right: 10px;
+    text-align:left;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .smalltext {
+    color:black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .title {
+    color: #004aad;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
 
   .col-md-12, .col-md-11 {
@@ -45,7 +70,10 @@
   }
 
   .list {
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Adjust as needed for spacing between articles */
+    margin-top: 20px; /* Add spacing above the list if necessary */
   }
 
   hr {
