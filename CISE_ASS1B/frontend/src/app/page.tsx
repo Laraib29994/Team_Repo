@@ -1,7 +1,7 @@
 'use client'
 
-import ShowArticlelist from "@/components/ShowArticlelist";
-import Navbar from "@/components/Nav/Navbar.tsx";
+import ShowArticleList from "@/./components/ShowArticleList";
+import Navbar from "@/components/Nav/NavBar.tsx";
 
 export default function Home() {
   return (
