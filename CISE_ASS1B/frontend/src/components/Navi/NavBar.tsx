@@ -1,4 +1,5 @@
 import React from 'react';
+import NavItem from "./NavItem"; // Adjust the path as needed
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import NavDropdown from './NavDropdown';
