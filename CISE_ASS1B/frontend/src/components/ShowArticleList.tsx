@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import ArticleCard from './ArticleCard';
 import { Article } from './Article';
-import './ShowArticleList.css';
+import './CSS/ShowArticleList.css';
 
 function ShowArticleList() {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -31,13 +31,13 @@ function ShowArticleList() {
   const queueButtonContent =
     pendingArticles.length === 0 ? 'Queue (Empty)' : `Queue! (${pendingArticles.length} pending)`;
 
-  const queueButtonStyle = {
+  /*const queueButtonStyle = {
     backgroundColor: pendingArticles.length === 0 ? 'grey' : 'orange',
     color: 'white',
     padding: '10px',
     borderRadius: '5px',
     textDecoration: 'none',
-  };
+  };*/
 
   return (
     <div className='ShowArticleList'>
@@ -51,14 +51,13 @@ function ShowArticleList() {
             <br />
             <h1 className='title'>Articles List</h1>
           </div>
-
+          
+          
           <div className='col-md-11'>
-            <Link
-              href='/queue'
-              style={queueButtonStyle}
-            >
+            <Link href='/queue' className='btn btn-outline-warning float-left'>
               {queueButtonContent}
             </Link>
+
             <Link href='/create-article' className='btn btn-outline-warning float-right'>
               + Add New Article
             </Link>

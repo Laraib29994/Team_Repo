@@ -1,0 +1,90 @@
+.ShowArticleList {
+    padding: 20px;
+    background: linear-gradient(to right, #f3eeed, #90a5c4); /* Blue gradient */
+    border-radius: 10px;
+  }
+
+  .container {
+   /* max-width: 1200px;*/
+    margin: auto;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  .logo {
+    color: #004aad;
+    margin-right: 10px;
+    text-align:left;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .smalltext {
+    font-size: 18px;
+    font-weight: bold;
+    color:black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  
+  .title {
+    color: #004aad;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  .col-md-12, .col-md-11 {
+    padding: 0 15px;
+  }
+
+  .display-4 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .btn-outline-warning {
+   /* border-color: #ffc107;*/
+    color: black;
+    border-width: 4px; /* Ensure the border is visible */
+    border-style: solid;
+    border-image: linear-gradient(to right, #f3eeed, #90a5c4) 1; /* Blue gradient border */
+    --bs-btn-active-bg: white;
+  }
+
+  .btn-outline-warning:hover {
+    color: black;
+    background-color: #90a5c4;
+    border-image: linear-gradient(to right, #f3eeed, #90a5c4) 1; /* Keep the gradient the same on hover */
+   
+  }
+
+  .float-right {
+    float: right;
+  }
+
+  .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Adjust as needed for spacing between articles */
+    margin-top: 20px; /* Add spacing above the list if necessary */
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid #dee2e6;
+    margin: 20px 0;
+  }

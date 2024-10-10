@@ -41,6 +41,11 @@
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.form-background {
+  background-color: rgba(255, 255, 255, 0.397); /* White background with 50% transparency */
+  padding: 20px; /* Optional padding */
+  border-radius: 10px; /* Optional rounded corners */
+}
 
 .form-group {
   margin-bottom: 15px;
@@ -50,6 +55,7 @@
   border: none;
   border-radius: 5px;
   padding: 10px;
+  background-color: #90a5c4;
 }
 
 .btn {
@@ -57,11 +63,17 @@
 }
 
 .btn-outline-warning {
-  color: #ffc107;
-  border-color: #ffc107;
+  color: black;
+  border-width: 4px; /* Ensure the border is visible */
+  border-style: solid;
+  border-image: linear-gradient(to left, #f3eeed, #90a5c4) 1; /* Blue gradient border */
+  --bs-btn-active-bg: white;
 }
 
 .btn-outline-warning:hover {
-  background-color: #ffc107;
-  color: white;
+  background-color: #90a5c4;
+  color: black;
+  border-image: linear-gradient(to left, #f3eeed, #90a5c4) 1; /* Keep the gradient the same on hover */
 }
+
+

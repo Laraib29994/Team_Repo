@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import QueueCard from './QueueCard';
 import { Article } from './Article';
-import './ShowArticleList.css';
+import './CSS/ShowQueue.css';
 
 function ShowQueue() {
   const [articles, setArticles] = useState<Article[]>([]);

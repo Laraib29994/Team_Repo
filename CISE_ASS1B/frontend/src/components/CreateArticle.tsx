@@ -2,7 +2,7 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Article, DefaultEmptyArticle } from "./Article";
-import './CreateArticle.css';
+import './CSS/CreateArticle.css';
 
 const CreateArticleComponent = () => {
   const navigate = useRouter();
@@ -46,10 +46,12 @@ const CreateArticleComponent = () => {
               Show Article List
             </Link>
           </div>
+
           <div className="col-md-10 m-auto">
             <h1 className="title">ARTICLE SUBMISSION</h1>
             <p className="smalltext">Choose how you would like to submit your article:</p>
 
+          <div className="form-background">
             <form noValidate onSubmit={onSubmit}>
               <div className="form-group">
                 <input
@@ -137,9 +139,11 @@ const CreateArticleComponent = () => {
                   onChange={onChange}
                 />
               </div>
+
+              
               <button
                 type="submit"
-                className="btn btn-outline-warning btn-block mt-4 mb-4 w-100"
+                className="btn btn-outline-warning btn-block mt-4 mb-4 w-100 btn-active-bg"
               >
                 Submit
               </button>
@@ -148,6 +152,7 @@ const CreateArticleComponent = () => {
         </div>
       </div>
     </div>
+  </div>
   );
 };
 
