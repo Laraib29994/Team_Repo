@@ -1,8 +1,8 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Article, DefaultEmptyArticle } from "./Article";
-import './CSS/CreateArticle.css';
+import { Article, DefaultEmptyArticle } from "../Article";
+import '../CSS/CreateArticle.css';
 
 const CreateArticleComponent = () => {
   const navigate = useRouter();
@@ -25,7 +25,7 @@ const CreateArticleComponent = () => {
         console.log(res);
         setArticle(DefaultEmptyArticle);
         // Redirect to the article list
-        navigate.push("/");
+        navigate.push("/Moderator-home");
       })
       .catch((err) => {
         console.log('Error from CreateArticle: ' + err);
@@ -42,7 +42,7 @@ const CreateArticleComponent = () => {
         <div className="row">
           <div className="col-md-8 m-auto">
             <br />
-            <Link href="/" className="btn btn-outline-warning float-right">
+            <Link href="/Moderator-home" className="btn btn-outline-warning float-right">
               Show Article List
             </Link>
           </div>

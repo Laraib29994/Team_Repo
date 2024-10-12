@@ -1,6 +1,6 @@
 'use client'
 
-import CreateArticleComponent from "@/components/CreateArticle";
+import CreateArticleComponent from "@/components/Moderator/CreateArticleModerator";
 
 export default function CreateArticle() {
   return (

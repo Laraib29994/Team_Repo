@@ -1,12 +1,12 @@
 'use client'
 
-import ShowArticleList from "@/./components/ShowArticleList";
+import SignIn from "@/./components/SignIn";
 //import Navbar from "@/components/Nav/NavBar.tsx";
 
-export default function Home() {
+export default function Signin() {
   return (
     <main>
-      <ShowArticleList/>
+      <SignIn/>
     </main>
   );
 }

@@ -25,7 +25,7 @@ function ShowArticleDetails() {
   const onDeleteClick = (articleId: string) => {
     fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/articles/${articleId}`, { method: 'DELETE' })
       .then(() => {
-        router.push('/'); // Navigate back to the article list after deletion
+        router.push('/Moderator-home'); // Navigate back to the article list after deletion
       })
       .catch((err) => {
         console.error('Error deleting article:', err);

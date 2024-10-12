@@ -34,6 +34,7 @@ function ShowArticleList() {
         <div className="logo-container">
           <h1 className="logo">SPEED</h1>
           <p className="smalltext">Software Practice Empirical Evidence Database</p>
+          <Link href="/" className="signOut">Sign out</Link>
         </div>
 
         <div className='row'>
@@ -41,15 +42,6 @@ function ShowArticleList() {
             <br />
             <h1 className='title'>Articles List</h1>
           </div>
-            <div className='col-md-11'>
-              <Link href='/create-article' className='btn btn-outline-warning float-right'>
-                + Add New Article
-              </Link>
-
-              <br />
-              <br />
-              <hr />
-            </div>
         </div>
       </div>
 
