@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Article } from './Article';
+import { Article } from '../Article';
 import { useRouter } from 'next/navigation';
 
 interface IProp {
@@ -15,7 +15,7 @@ const QueueCard = ({ article }: IProp) => {
   }
 
   const onClick = () => {
-    router.push(`/show-article/${article._id}`); // Navigate to the article's detail page
+    router.push(`/show-article-moderator/${article._id}`); // Navigate to the article's detail page
   };
 
   const handleApprove = async (e: React.MouseEvent) => {
@@ -32,7 +32,7 @@ const QueueCard = ({ article }: IProp) => {
         setStatus('approved'); // Update local status to 'approved'
         console.log(`Article approved: ${article.title}`);
         // Optional: Navigate or refresh the list to reflect the change
-        router.push(`/show-article/${article._id}`);
+        window.location.reload();
       } else {
         console.error('Failed to approve the article');
       }
@@ -52,7 +52,7 @@ const QueueCard = ({ article }: IProp) => {
       });
 
       if (response.ok) {
-        router.push('/'); // Navigate back to the article list after deletion
+        window.location.reload();
         console.log(`Article deleted: ${article.title}`);
       } else {
         console.error('Failed to delete the article');
@@ -66,7 +66,7 @@ const QueueCard = ({ article }: IProp) => {
   return (
     <div className='card-container' onClick={onClick}>
       <img
-        src='https://images.unsplash.com/photo-1495446815901-a7297e633e8d'
+        src='https://images.unsplash.com/photo-1585241936939-be4099591252?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         alt='Queue Article Image'
         height={210}
       />

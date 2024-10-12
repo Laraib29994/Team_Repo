@@ -1,4 +1,4 @@
-import { IoMdArrowDropdown } from "react-icons/io";
+/*import { IoMdArrowDropdown } from "react-icons/io";
 import NavBar from "./Nav/NavBar";
 import NavDropdown from "./Nav/NavDropdown";
 import NavItem from "./Nav/NavItem";
@@ -22,3 +22,4 @@ const PopulatedNavBar = () => {
 };
 
 export default PopulatedNavBar;
+*/
