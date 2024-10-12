@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { Article, DefaultEmptyArticle } from './Article'; // Ensure correct import path
+import { Article, DefaultEmptyArticle } from '../Article'; // Ensure correct import path
 import Link from 'next/link';
 
 function ShowArticleDetails() {
@@ -108,6 +108,23 @@ function ShowArticleDetails() {
             <hr /> <br />
           </div>
           <div className='col-md-10 m-auto'>{ArticleItem}</div>
+          <div className='col-md-6 m-auto'>
+            <button
+              type='button'
+              className='btn btn-outline-danger btn-lg btn-block'
+              onClick={() => onDeleteClick(article._id || '')}
+            >
+              Delete Article
+            </button>
+          </div>
+          <div className='col-md-6 m-auto'>
+            <Link
+              href={`/edit-article/${article._id}`}
+              className='btn btn-outline-info btn-lg btn-block'
+            >
+              Edit Article
+            </Link>
+          </div>
         </div>
       </div>
     </div>

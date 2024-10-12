@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import QueueCard from './QueueCard';
-import { Article } from './Article';
-import './CSS/ShowQueue.css';
+import { Article } from '../Article';
+import '../CSS/ShowQueue.css';
 
 function ShowQueue() {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -32,12 +32,7 @@ function ShowQueue() {
           <div className='col-md-12'>
             <br />
             <h2 className='display-4 text-center'>Pending Articles List</h2>
-          </div>
-          <div className='col-md-10 m-auto'>
-            <br /> <br />
-            <Link href='/' className='btn btn-outline-warning float-left'>
-              Show Article List
-            </Link>
+            <br/>
           </div>
 
           <div className='col-md-11'>
@@ -46,6 +41,12 @@ function ShowQueue() {
               className='btn btn-outline-warning float-right'
             >
               + Add New Article
+            </Link>
+            <Link
+                href='/Moderator-home'
+                className='btn btn-outline-warning float-left'
+                >
+                Show Article List
             </Link>
             <br />
             <br />
