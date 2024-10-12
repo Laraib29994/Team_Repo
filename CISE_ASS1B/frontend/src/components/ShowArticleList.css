@@ -45,6 +45,9 @@
   }
 
   .list {
+    display: grid; /* Enable grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between items */
     margin-top: 20px;
   }
 
