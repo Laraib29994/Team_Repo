@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import ArticleCard from '../ArticleCard';
+import ArticleCard from './ArticleCardModerator';
 import { Article } from '../Article';
 import '../CSS/ShowArticleList.css';
 

@@ -97,7 +97,7 @@ function ShowArticleDetails() {
         <div className='row'>
           <div className='col-md-10 m-auto'>
             <br /> <br />
-            <Link href='/' className='btn btn-outline-warning float-left'>
+            <Link href='/Moderator-home' className='btn btn-outline-warning float-left'>
               Show Article List
             </Link>
           </div>
