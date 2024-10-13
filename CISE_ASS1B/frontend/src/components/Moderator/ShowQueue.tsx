@@ -34,25 +34,6 @@ function ShowQueue() {
             <h2 className='display-4 text-center'>Pending Articles List</h2>
             <br/>
           </div>
-
-          <div className='col-md-11'>
-            <Link
-              href='/create-article'
-              className='btn btn-outline-warning float-right'
-            >
-              + Add New Article
-            </Link>
-            <Link
-                href='/Moderator-home'
-                className='btn btn-outline-warning float-left'
-                >
-                Show Article List
-            </Link>
-            <br />
-            <br />
-            <hr />
-          </div>
-
           <div className='list'>{articleList}</div>
         </div>
       </div>

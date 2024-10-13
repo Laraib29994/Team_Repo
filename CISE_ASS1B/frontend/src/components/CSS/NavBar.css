@@ -1,0 +1,71 @@
+/* NavBar.css */
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+  background-color: #282c34;
+  color: white;
+  position: relative; /* Ensure positioning for centering */
+}
+
+.title {
+  flex: 0 0 auto;/* Allow the title to take available space */
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.subtitle {
+  font-size: 1rem; /* Adjust size as needed */
+  color: #ccc; /* Light color for subtitle */
+  margin-top: 5px; /* Space between title and subtitle */
+}
+
+.current-page {
+  position: absolute; /* Center this element */
+  left: 50%; /* Position it to the center */
+  transform: translateX(-50%); /* Center it horizontally */
+  font-size: 1.2rem;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background-color: #282c34;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 5px 10px; /* Add padding for better spacing */
+}
+
+.dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #3c4048;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 10px 0; /* Keep padding for the dropdown itself */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 20px; /* Increase padding for more space around text */
+  color: white;
+  text-decoration: none;
+  font-size: 1rem; /* Adjust font size if necessary */
+}
+
+.dropdown a:hover {
+  background-color: #555;
+}
+
+/* Optional: Add margin to the menu button for better spacing */
+.dropdown-toggle {
+  margin-right: 10px;
+}

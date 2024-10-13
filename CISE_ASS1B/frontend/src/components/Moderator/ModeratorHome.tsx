@@ -42,32 +42,12 @@ function ModeratorHome() {
   return (
     <div className='ShowArticleList'>
       <div className='container'>
-        <div className="logo-container">
-          <h1 className="logo">SPEED</h1>
-          <p className="smalltext">Software Practice Empiracal Evidence Database</p>
-          <Link href="/" className="signOut">Sign out</Link>
-        </div>
         <div className='row'>
           <div className='col-md-12'>
             <br />
             <h1 className='title'>Articles List</h1>
           </div>
-
-
-          <div className='col-md-11'>
-            <Link href='/queue' className='btn btn-outline-warning float-left'>
-              {queueButtonContent}
-            </Link>
-
-            <Link href='/create-article' className='btn btn-outline-warning float-right'>
-              + Add New Article
-            </Link>
-            <br />
-            <br />
-            <hr />
         </div>
-        </div>
-
         <div className='list'>{articleList}</div>
       </div>
     </div>

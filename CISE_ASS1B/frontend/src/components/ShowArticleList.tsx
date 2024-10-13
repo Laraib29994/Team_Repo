@@ -31,12 +31,6 @@ function ShowArticleList() {
   return (
     <div className='ShowArticleList'>
       <div className='container'>
-        <div className="logo-container">
-          <h1 className="logo">SPEED</h1>
-          <p className="smalltext">Software Practice Empirical Evidence Database</p>
-          <Link href="/" className="signOut">Sign out</Link>
-        </div>
-
         <div className='row'>
           <div className='col-md-12'>
             <br />
