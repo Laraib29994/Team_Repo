@@ -4,6 +4,7 @@ import { Article } from './Article';
 interface SearchBarProps {
     articles: Article[];
     setFilteredArticles: React.Dispatch<React.SetStateAction<Article[]>>;
+    setFilteredArticles: React.Dispatch<React.SetStateAction<Article[]>>; // Updated state type
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({ articles, setFilteredArticles }) => {
@@ -14,6 +15,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ articles, setFilteredArticles }) 
         setQuery(keyword);
 
         const filtered = articles.filter((article) => 
+        const filtered = articles.filter((article) =>
             article.title?.toLowerCase().includes(keyword)
         );
         setFilteredArticles(filtered);
@@ -32,4 +34,5 @@ const SearchBar: React.FC<SearchBarProps> = ({ articles, setFilteredArticles }) 
     );
 };
 
+export default SearchBar;
 export default SearchBar;
