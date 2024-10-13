@@ -1,7 +1,7 @@
 'use client'
 
 import CreateArticleComponent from "@/components/CreateArticle";
-import NavBar from "@/./components/NavBar";
+import NavBar from "@/./components/Moderator/NavBarModerator";
 
 export default function CreateArticle() {
   return (

@@ -2,6 +2,8 @@ import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { Article, DefaultEmptyArticle } from '../Article';
 import Link from 'next/link';
+import NavBar from '../NavBar';
+import '../CSS/NavBar.css'
 
 function UpdateArticleInfo() {
   const [article, setArticle] = useState<Article>(DefaultEmptyArticle);
@@ -45,13 +47,6 @@ function UpdateArticleInfo() {
       <div className='container'>
         <div className='row'>
           <div className='col-md-8 m-auto'>
-            <br />
-            <Link href='/' className='btn btn-outline-warning float-left'>
-              Show Article List
-            </Link>
-          </div>
-          <div className='col-md-8 m-auto'>
-            <h1 className='display-4 text-center'>Edit Article</h1>
             <p className='lead text-center'>Update the article&apos;s information</p>
           </div>
         </div>
