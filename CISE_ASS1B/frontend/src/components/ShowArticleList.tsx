@@ -3,10 +3,12 @@ import Link from 'next/link';
 import ArticleCard from './ArticleCard';
 import { Article } from './Article';
 import './CSS/ShowArticleList.css';
+import SearchBar from './SearchBar';
 
 function ShowArticleList() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [pendingArticles, setPendingArticles] = useState<Article[]>([]);
+  const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);
 
   useEffect(() => {
     fetch('http://localhost:8082/api/Articles')
@@ -22,34 +24,13 @@ function ShowArticleList() {
         console.log('Error from ShowArticleList: ' + err);
       });
   }, []);
-import DateFilter from './DateFilter';
-
-interface ShowArticleListProps {
-  articles: Article[];
-}
-
-const ShowArticleList: React.FC<ShowArticleListProps> = ({ articles }) => {
-  const [filteredArticles, setFilteredArticles] = useState<Article[]>(articles);
-  const [query, setQuery] = useState<string>(''); // Added query state
-
-  useEffect(() => {
-    setFilteredArticles(articles); // Initialize with all articles
-  }, [articles]);
-
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const keyword = e.target.value.toLowerCase();
-    setQuery(keyword);
-
-    const filtered = articles.filter((article) =>
-      article.title?.toLowerCase().includes(keyword)
-    );
-    setFilteredArticles(filtered);
-  };
 
   const articleList =
-    filteredArticles.length === 0
-      ? 'There are no article records!'
-      : filteredArticles.map((article, k) => <ArticleCard article={article} key={k} />);
+  filteredArticles.length === 0
+      ? <p>No matching articles found!</p>
+      : filteredArticles.map((article, index) => (
+          <ArticleCard article={article} key={index} />
+      ));
 
   return (
     <div className='ShowArticleList'>
@@ -58,41 +39,14 @@ const ShowArticleList: React.FC<ShowArticleListProps> = ({ articles }) => {
           <div className='col-md-12'>
             <br />
             <h1 className='title'>Articles List</h1>
+            <SearchBar articles={articles} setFilteredArticles={setFilteredArticles} />
           </div>
         </div>
-            <h2 className='display-4 text-center'>Article List</h2>
-          </div>
-
-          <div className='col-md-11'>
-            <Link href='/create-article' className='btn btn-outline-warning float-right'>
-              + Add New Article
-            </Link>
-            <br />
-            <br />
-            <hr />
-          </div>
-        </div>
-
-        <div className='SearchBar'>
-          <input
-            type="text"
-            value={query}
-            onChange={handleSearch}
-            placeholder="Search by title..."
-            style={{ padding: '10px', width: '100%', borderRadius: '5px' }}
-          />
-        </div>
-
-        {/* Add DateFilter component */}
-        <div className="date-filter">
-          <DateFilter articles={articles} setFilteredArticles={setFilteredArticles} />
-        </div>
-
-        <div className='list'>{articleList}</div>
       </div>
 
       <div className='list'>{articleList}</div>
     </div>
+
   );
 };
 

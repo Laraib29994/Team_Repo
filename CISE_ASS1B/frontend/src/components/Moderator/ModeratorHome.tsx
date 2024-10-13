@@ -3,10 +3,12 @@ import Link from 'next/link';
 import ArticleCard from './ArticleCardModerator';
 import { Article } from '../Article';
 import '../CSS/ShowArticleList.css';
+import SearchBar from '../SearchBar';
 
 function ModeratorHome() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [pendingArticles, setPendingArticles] = useState<Article[]>([]);
+  const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);
 
   useEffect(() => {
     fetch('http://localhost:8082/api/Articles')
@@ -24,9 +26,11 @@ function ModeratorHome() {
   }, []);
 
   const articleList =
-    articles.length === 0
-      ? 'There is no article record!'
-      : articles.map((article, k) => <ArticleCard article={article} key={k} />);
+  filteredArticles.length === 0
+      ? <p>No matching articles found!</p>
+      : filteredArticles.map((article, index) => (
+          <ArticleCard article={article} key={index} />
+      ));
 
   const queueButtonContent =
     pendingArticles.length === 0 ? 'Queue (Empty)' : `Queue! (${pendingArticles.length} pending)`;
@@ -46,6 +50,7 @@ function ModeratorHome() {
           <div className='col-md-12'>
             <br />
             <h1 className='title'>Articles List</h1>
+            <SearchBar articles={articles} setFilteredArticles={setFilteredArticles} />
           </div>
         </div>
         <div className='list'>{articleList}</div>
