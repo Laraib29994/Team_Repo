@@ -1,0 +1,51 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; // Space out items from left to right
+    align-items: center;
+    width: 100%;
+    background-color: darkblue;
+    color: aliceblue;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0 1em; // Add some padding
+    height: 60px; // Set a fixed height for the navbar
+  }
+  
+  .navitem {
+    padding: 1em;
+    cursor: default;
+    white-space: nowrap;
+  }
+  
+  .clickable {
+    @extend .navitem;
+    cursor: pointer;
+  }
+  
+  .clickable:hover {
+    backdrop-filter: brightness(50%);
+  }
+  
+  .dropdown_container {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: darkblue;
+    position: absolute;
+    top: 100%;
+    right: 0;
+  }
+  
+  .dropdown:hover {
+    cursor: pointer;
+    backdrop-filter: brightness(50%);
+  
+    .dropdown_container {
+      visibility: visible;
+    }
+  }
+  
+  .end {
+    margin-left: auto; // This pushes items to the right
+  }
+  

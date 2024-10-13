@@ -1,8 +1,7 @@
-'use client'
+'use client'; // This is required to use React features in this component
 
 import ShowArticleList from "@/./components/ShowArticleList";
 import NavBar from "@/./components/NavBar";
-//import Navbar from "@/components/Nav/NavBar.tsx";
 
 export default function Home() {
 
