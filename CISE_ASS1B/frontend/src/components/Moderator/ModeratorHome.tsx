@@ -47,15 +47,7 @@ function ModeratorHome() {
             <br />
             <h1 className='title'>Articles List</h1>
           </div>
-
-
-          <div className='col-md-11'>
-            <Link href='/queue' className='btn btn-outline-warning float-left'>
-              {queueButtonContent}
-            </Link>
         </div>
-        </div>
-
         <div className='list'>{articleList}</div>
       </div>
     </div>

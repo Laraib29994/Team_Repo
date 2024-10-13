@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import ArticleCard from './ArticleCardModerator';
 import '../CSS/NavBar.css';  // Ensure this path is correct
 
 interface NavbarProps {
@@ -63,6 +64,9 @@ const [articles, setArticles] = useState<Article[]>([]);
             <Link href="/Moderator-home">Articles</Link>
             <Link href="/create-article-moderator">Create Articles</Link>
             <Link href="/">Sign Out</Link>
+            <Link href='/queue'>
+              {queueButtonContent}
+            </Link>
           </div>
         )}
       </div>
