@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import ArticleCard from './ArticleCardModerator';
+import { Article } from '../Article';
 import '../CSS/NavBar.css';  // Ensure this path is correct
 
 interface NavbarProps {
@@ -33,11 +34,6 @@ const [articles, setArticles] = useState<Article[]>([]);
         console.log('Error from ShowArticleList: ' + err);
       });
   }, []);
-
-  const articleList =
-    articles.length === 0
-      ? 'There is no article record!'
-      : articles.map((article, k) => <ArticleCard article={article} key={k} />);
 
   const queueButtonContent =
     pendingArticles.length === 0 ? 'Queue (Empty)' : `Queue! (${pendingArticles.length} pending)`;
