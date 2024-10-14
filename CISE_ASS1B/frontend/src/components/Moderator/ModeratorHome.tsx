@@ -19,14 +19,16 @@ function ModeratorHome() {
         const pendingArticles = articles.filter((article: Article) => article.status === 'Pending');
         setArticles(approvedArticles);
         setPendingArticles(pendingArticles);
+        setFilteredArticles(approvedArticles); // Initialize filtered articles with approved ones
       })
       .catch((err) => {
         console.log('Error from ShowArticleList: ' + err);
       });
   }, []);
 
+  // Adjust the article list based on filtered articles
   const articleList =
-  filteredArticles.length === 0
+    filteredArticles.length === 0
       ? <p>No matching articles found!</p>
       : filteredArticles.map((article, index) => (
           <ArticleCard article={article} key={index} />
@@ -34,14 +36,6 @@ function ModeratorHome() {
 
   const queueButtonContent =
     pendingArticles.length === 0 ? 'Queue (Empty)' : `Queue! (${pendingArticles.length} pending)`;
-
-  /*const queueButtonStyle = {
-    backgroundColor: pendingArticles.length === 0 ? 'grey' : 'orange',
-    color: 'white',
-    padding: '10px',
-    borderRadius: '5px',
-    textDecoration: 'none',
-  };*/
 
   return (
     <div className='ShowArticleList'>

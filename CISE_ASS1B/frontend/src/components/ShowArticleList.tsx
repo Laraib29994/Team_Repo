@@ -19,14 +19,16 @@ function ShowArticleList() {
         const pendingArticles = articles.filter((article: Article) => article.status === 'Pending');
         setArticles(approvedArticles);
         setPendingArticles(pendingArticles);
+        setFilteredArticles(approvedArticles); // Initialize filtered articles with approved ones
       })
       .catch((err) => {
         console.log('Error from ShowArticleList: ' + err);
       });
   }, []);
 
+  // Adjust the article list based on filtered articles
   const articleList =
-  filteredArticles.length === 0
+    filteredArticles.length === 0
       ? <p>No matching articles found!</p>
       : filteredArticles.map((article, index) => (
           <ArticleCard article={article} key={index} />
