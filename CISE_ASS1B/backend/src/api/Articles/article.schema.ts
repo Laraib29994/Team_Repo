@@ -17,6 +17,9 @@ export class Article {
   @Prop()
   content?: string;
 
+  @Prop()
+  descriptor?: string;
+
   @Prop({ type: Date })
   publication_year?: Date; // Changed from published_date to publication_year
 

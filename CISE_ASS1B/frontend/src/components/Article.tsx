@@ -9,7 +9,8 @@ export type Article = {
     pages?: number;                  // Number of pages (optional number)
     content?: string;                // Content of the article (optional string)
     updated_date?: Date;             // Date when the article was last updated (optional Date)
-    status?: string;                // Content of the article (optional string)
+    status?: string;                 // Content of the article (optional string)
+    descriptor?: string;             // Article descriptor
 };
 
 export const DefaultEmptyArticle: Article = {
@@ -22,6 +23,7 @@ export const DefaultEmptyArticle: Article = {
     number: undefined,               // Default undefined for number
     pages: undefined,                // Default undefined for pages
     content: '',                     // Default empty string for content
+    descriptor: '',                     // Default empty string for descriptor
     updated_date: undefined,         // Default undefined for updated date
     status: 'pending',                     // Default empty string for content
 };

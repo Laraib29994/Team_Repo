@@ -29,6 +29,7 @@ const ArticleCard = ({ article }: IProp) => {
         <h3>Author/s: {article.authors}</h3>
         <p>DOI: {article.DOI}</p>
         <p>Pub Year: {article.publication_year ? article.publication_year.toString().split('-')[0] : 'N/A'}</p>
+        <p>Descriptor: {article.descriptor}</p>
       </div>
     </div>
   );

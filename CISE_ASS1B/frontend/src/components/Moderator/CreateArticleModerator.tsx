@@ -127,6 +127,16 @@ const CreateArticleComponent = () => {
                   onChange={onChange}
                 />
               </div>
+              <br />
+              <div className="form-group">
+                <textarea
+                  placeholder="Short Descriptor"
+                  name="descriptor" // New field for article content
+                  className="form-control"
+                  value={article.descriptor || ''} // Updated to include content
+                  onChange={onChange}
+                />
+              </div>
 
               
               <button

@@ -105,6 +105,18 @@ function UpdateArticleInfo() {
             <br />
 
             <div className='form-group'>
+              <label htmlFor='content'>Descriptor</label>
+              <textarea
+                placeholder='Short Descriptor'
+                name='descriptor'
+                className='form-control'
+                value={article.descriptor}
+                onChange={textAreaOnChange}
+              />
+            </div>
+            <br />
+
+            <div className='form-group'>
               <label htmlFor='publication_year'>Publication Year</label>
               <input
                 type='date'

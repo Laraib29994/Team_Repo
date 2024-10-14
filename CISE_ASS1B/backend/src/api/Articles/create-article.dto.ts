@@ -11,4 +11,5 @@ export class CreateArticleDto {
   content?: string;             // Content of the article (optional)
   updated_date?: Date;          // Updated date (optional for consistency)
   status?: String;              //added status for que
+  descriptor?: String;          //article descriptor
 }

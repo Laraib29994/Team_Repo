@@ -77,6 +77,11 @@ function ShowArticleDetails() {
             <td>{article.content}</td> {/* Added content field */}
           </tr>
           <tr>
+            <th scope='row'>8</th>
+            <td>Descriptor</td>
+            <td>{article.descriptor}</td> {/* Added descriptor field */}
+          </tr>
+          <tr>
             <th scope='row'>9</th>
             <td>Updated Date</td>
             <td>{article.updated_date?.toString()}</td>
