@@ -4,7 +4,7 @@ import './CSS/SignIn.css';
 
 function SignIn() {
   return (
-    <div className="container">
+    <div className="content-container">
     <div className="logo-container">
       <h1 className="title">SPEED</h1>
       <p className="smalltext">SOFTWARE PRACTICE EMPIRACAL EVIDENCE DATABASE</p>

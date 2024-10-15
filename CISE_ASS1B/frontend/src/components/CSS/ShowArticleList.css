@@ -10,11 +10,6 @@
     margin: auto;
   }
 
-  .logo-container {
-    display: flex;
-    align-items: center; /* Aligns items vertically in the center */
-    justify-content: space-between; /* Space between items to push Sign Out button to the right */
-}
   .row {
     display: flex;
     flex-wrap: wrap;
