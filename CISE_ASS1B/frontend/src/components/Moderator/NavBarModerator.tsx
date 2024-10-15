@@ -36,14 +36,14 @@ const [articles, setArticles] = useState<Article[]>([]);
   }, []);
 
   const queueButtonContent =
-    pendingArticles.length === 0 ? 'Queue (Empty)' : `Queue! (${pendingArticles.length} pending)`;
+    pendingArticles.length === 0 ? 'QUEUE (Empty)' : `Queue! (${pendingArticles.length} pending)`;
 
 
   return (
     <nav className="navbar">
       {/* Left: Website Title */}
       <div className="title">
-        <Link href="/Moderator-home" className="title">Speed</Link>
+        <Link href="/Moderator-home" className="title">SPEED</Link>
         <div className="subtitle">{subtitle}</div> {/* Render subtitle here */}
       </div>
 
@@ -53,13 +53,14 @@ const [articles, setArticles] = useState<Article[]>([]);
       {/* Right: Dropdown Menu */}
       <div className="dropdown-container">
         <button className="dropdown-toggle" onClick={toggleDropdown}>
-          Menu &#x25BC;
+        <span className={`arrow ${isDropdownOpen ? 'open' : 'closed'}`}></span>
+         
         </button>
         {isDropdownOpen && (
           <div className="dropdown">
-            <Link href="/Moderator-home">Articles</Link>
-            <Link href="/create-article-moderator">Create Articles</Link>
-            <Link href="/">Sign Out</Link>
+            <Link href="/Moderator-home">ARTICLES</Link>
+            <Link href="/create-article-moderator">CREATE ARTICLES</Link>
+            <Link href="/">SIGN OUT</Link>
             <Link href='/queue'>
               {queueButtonContent}
             </Link>

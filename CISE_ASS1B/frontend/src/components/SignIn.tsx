@@ -4,6 +4,12 @@ import './CSS/SignIn.css';
 
 function SignIn() {
   return (
+    <div className="container">
+    <div className="logo-container">
+      <h1 className="title">SPEED</h1>
+      <p className="smalltext">SOFTWARE PRACTICE EMPIRACAL EVIDENCE DATABASE</p>
+        </div>
+
     <div className='SignIn'>
       <div className='SignIn-box'>
         <h1>Select User Type</h1>
@@ -14,6 +20,7 @@ function SignIn() {
           Moderator
         </Link>
       </div>
+    </div>
     </div>
   );
 }

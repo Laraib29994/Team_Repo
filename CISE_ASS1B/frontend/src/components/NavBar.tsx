@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ title, subtitle, initialPage }) => {
     <nav className="navbar">
       {/* Left: Website Title */}
       <div className="title">
-        <Link href="/Home" className="title">Speed</Link>
+        <Link href="/Home" className="title">SPEED</Link>
         <div className="subtitle">{subtitle}</div> {/* Render subtitle here */}
       </div>
 
@@ -29,13 +29,13 @@ const Navbar: React.FC<NavbarProps> = ({ title, subtitle, initialPage }) => {
       {/* Right: Dropdown Menu */}
       <div className="dropdown-container">
         <button className="dropdown-toggle" onClick={toggleDropdown}>
-          Menu &#x25BC;
+        <span className={`arrow ${isDropdownOpen ? 'open' : 'closed'}`}></span>
         </button>
         {isDropdownOpen && (
           <div className="dropdown">
-            <Link href="/Home">Articles</Link>
-            <Link href="/create-article">Create Articles</Link>
-            <Link href="/">Sign Out</Link>
+            <Link href="/Moderator-home">ARTICLES</Link>
+            <Link href="/create-article-moderator">CREATE ARTICLES</Link>
+            <Link href="/">SIGN OUT</Link>
           </div>
         )}
       </div>

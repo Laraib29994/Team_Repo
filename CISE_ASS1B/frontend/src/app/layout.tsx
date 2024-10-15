@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-<body className={inter.className}>
+<body className={inter.className} style={{ background: 'linear-gradient(to right, #f3eeed, #90a5c4)',}}>
         <BootstrapClient />
         {children}
       </body>
