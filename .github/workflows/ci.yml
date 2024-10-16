@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: Team_Repo/CISE_ASS1B
+        working-directory: CISE_ASS1B
 
     strategy:
       matrix:
