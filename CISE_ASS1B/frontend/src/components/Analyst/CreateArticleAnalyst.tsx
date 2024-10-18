@@ -1,8 +1,8 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Article, DefaultEmptyArticle } from "./Article";
-import './CSS/CreateArticle.css';
+import { Article, DefaultEmptyArticle } from "../Article";
+import '../CSS/CreateArticle.css';
 
 const CreateArticleComponent = () => {
   const navigate = useRouter();
@@ -25,7 +25,7 @@ const CreateArticleComponent = () => {
         console.log(res);
         setArticle(DefaultEmptyArticle);
         // Redirect to the article list
-        navigate.push("/Home");
+        navigate.push("/Analyst-home");
       })
       .catch((err) => {
         console.log('Error from CreateArticle: ' + err);
@@ -38,6 +38,7 @@ const CreateArticleComponent = () => {
         <div className="row">
           <div className="col-md-10 m-auto">
             <h1 className="title">ARTICLE SUBMISSION</h1>
+
           <div className="form-background">
             <form noValidate onSubmit={onSubmit}>
               <div className="form-group">

@@ -38,7 +38,7 @@ function UpdateArticleInfo() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(article),
     })
-      .then(() => router.push(`/show-article-moderator/${id}`)) // Navigate to article details after update
+      .then(() => router.push(`/show-article-analyst/${id}`)) // Navigate to article details after update
       .catch((err) => console.log('Error updating article: ', err));
   };
 

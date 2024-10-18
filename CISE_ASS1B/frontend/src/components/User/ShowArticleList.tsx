@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import ArticleCard from './ArticleCard';
-import { Article } from './Article';
-import './CSS/ShowArticleList.css';
-import SearchBar from './SearchBar';
+import { Article } from '../Article';
+import '../CSS/ShowArticleList.css';
+import SearchBar from '../SearchBar';
 
 function ShowArticleList() {
   const [articles, setArticles] = useState<Article[]>([]);

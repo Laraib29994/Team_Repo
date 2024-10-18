@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Article } from './Article';
+import { Article } from '../Article';
 
 interface SearchBarProps {
     articles: Article[];

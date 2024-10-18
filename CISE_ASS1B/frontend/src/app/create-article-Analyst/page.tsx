@@ -1,7 +1,7 @@
 'use client'
 
-import CreateArticleComponent from "@/components/User/CreateArticle";
-import NavBar from "@/./components/User/NavBar";
+import CreateArticleComponent from "@/components/Analyst/CreateArticleAnalyst";
+import NavBar from "@/./components/Analyst/NavBarAnalyst";
 
 export default function CreateArticle() {
   return (

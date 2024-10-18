@@ -1,7 +1,7 @@
 'use client'
 
-import ShowArticleDetails from "@/components/ShowArticleDetails";
-import NavBar from "@/./components/NavBar";
+import ShowArticleDetails from "@/components/User/ShowArticleDetails";
+import NavBar from "@/./components/User/NavBar";
 
 export default function ShowArticle() {
   return (
