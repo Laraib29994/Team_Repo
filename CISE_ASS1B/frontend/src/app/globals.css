@@ -89,6 +89,14 @@ body, main{
   background: linear-gradient(to right, #f3eeed, #90a5c4); /* Blue gradient */
 }
 
+.title {
+  font-size: 80px;
+  color: #004aad;
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 .date-filter {
   text-align: center;
   color: black;

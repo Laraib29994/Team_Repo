@@ -42,8 +42,8 @@ const [articles, setArticles] = useState<Article[]>([]);
   return (
     <nav className="navbar">
       {/* Left: Website Title */}
-      <div className="title">
-        <Link href="/Moderator-home" className="title">SPEED</Link>
+      <div className="header">
+        <Link href="/Moderator-home" className="header">SPEED</Link>
         <div className="subtitle">{subtitle}</div> {/* Render subtitle here */}
       </div>
 

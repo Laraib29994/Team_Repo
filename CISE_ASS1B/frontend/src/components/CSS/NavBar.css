@@ -12,12 +12,13 @@
 }
 
 
-.title {
+.header {
   flex: 0 0 auto;/* Allow the title to take available space */
   font-size: 50px;
   font-weight: bold;
   text-decoration: none;
   float:left;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .subtitle {
@@ -27,6 +28,7 @@
   margin-top: 25px; /* Space between title and subtitle */
   margin-left: 5px;
   float:right;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .current-page {
@@ -34,7 +36,6 @@
   left: 50%; /* Position it to the center */
   transform: translateX(-50%); /* Center it horizontally */
   font-size: 1.2rem;
-  margin-top:10%;
 }
 
 .arrow {
