@@ -2,7 +2,6 @@ import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { Article, DefaultEmptyArticle } from '../Article';
 import Link from 'next/link';
-import NavBar from '../NavBar';
 import '../CSS/NavBar.css'
 
 function UpdateArticleInfo() {
