@@ -6,7 +6,6 @@ import './CSS/CreateArticle.css';
 
 const CreateArticleComponent = () => {
   const navigate = useRouter();
-
   const [article, setArticle] = useState<Article>(DefaultEmptyArticle);
 
   const onChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -15,7 +14,8 @@ const CreateArticleComponent = () => {
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(article);
+    console.log("Submitting:", article);
+
     fetch("http://localhost:8082/api/articles", {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
@@ -24,8 +24,9 @@ const CreateArticleComponent = () => {
       .then((res) => {
         console.log(res);
         setArticle(DefaultEmptyArticle);
+
         // Redirect to the article list
-        navigate.push("/Home");
+        navigate.push('/Home');
       })
       .catch((err) => {
         console.log('Error from CreateArticle: ' + err);

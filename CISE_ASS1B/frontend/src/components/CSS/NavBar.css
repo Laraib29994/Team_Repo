@@ -36,7 +36,6 @@
   left: 50%; /* Position it to the center */
   transform: translateX(-50%); /* Center it horizontally */
   font-size: 1.2rem;
-  margin-top:10%;
 }
 
 .arrow {
