@@ -1,7 +1,7 @@
 'use client'
 
-import UpdateArticleInfo from "@/components/Moderator/UpdateArticleInfo";
-import NavBar from "@/components/NavBar";
+import UpdateArticleInfo from "@/components/Analyst/UpdateArticleInfo";
+import NavBar from "@/components/Analyst/NavBarAnalyst";
 
 export default function ShowArticle() {
   return (

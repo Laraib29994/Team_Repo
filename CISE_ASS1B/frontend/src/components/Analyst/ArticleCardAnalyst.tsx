@@ -1,5 +1,5 @@
 import React from 'react';
-import { Article } from './Article';
+import { Article } from '../Article';
 import { useRouter } from 'next/navigation';
 
 interface IProp {
@@ -14,7 +14,7 @@ const ArticleCard = ({ article }: IProp) => {
   }
 
   const onClick = () => {
-    router.push(`/show-article/${article._id}`); // Navigate to the article's detail page
+    router.push(`/show-article-analyst/${article._id}`); // Navigate to the article's detail page
   };
 
   return (

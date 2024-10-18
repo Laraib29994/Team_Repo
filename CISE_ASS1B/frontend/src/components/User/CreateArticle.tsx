@@ -1,8 +1,8 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Article, DefaultEmptyArticle } from "./Article";
-import './CSS/CreateArticle.css';
+import { Article, DefaultEmptyArticle } from "../Article";
+import '../CSS/CreateArticle.css';
 
 const CreateArticleComponent = () => {
   const navigate = useRouter();

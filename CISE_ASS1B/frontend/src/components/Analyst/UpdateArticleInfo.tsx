@@ -2,7 +2,6 @@ import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { Article, DefaultEmptyArticle } from '../Article';
 import Link from 'next/link';
-import NavBar from '../NavBar';
 import '../CSS/NavBar.css'
 
 function UpdateArticleInfo() {
@@ -38,7 +37,7 @@ function UpdateArticleInfo() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(article),
     })
-      .then(() => router.push(`/show-article-moderator/${id}`)) // Navigate to article details after update
+      .then(() => router.push(`/show-article-analyst/${id}`)) // Navigate to article details after update
       .catch((err) => console.log('Error updating article: ', err));
   };
 

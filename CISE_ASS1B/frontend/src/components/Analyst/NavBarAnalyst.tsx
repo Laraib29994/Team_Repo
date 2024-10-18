@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import './CSS/NavBar.css';  // Ensure this path is correct
+import '../CSS/NavBar.css';  // Ensure this path is correct
 
 interface NavbarProps {
   title: string;
@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ title, subtitle, initialPage }) => {
     <nav className="navbar">
       {/* Left: Website Title */}
       <div className="header">
-        <Link href="/Home" className="header">SPEED</Link>
+        <Link href="/Analyst-home" className="header">SPEED</Link>
         <div className="subtitle">{subtitle}</div> {/* Render subtitle here */}
       </div>
 
@@ -30,11 +30,12 @@ const Navbar: React.FC<NavbarProps> = ({ title, subtitle, initialPage }) => {
       <div className="dropdown-container">
         <button className="dropdown-toggle" onClick={toggleDropdown}>
         <span className={`arrow ${isDropdownOpen ? 'open' : 'closed'}`}></span>
+         
         </button>
         {isDropdownOpen && (
           <div className="dropdown">
-            <Link href="/Moderator-home">ARTICLES</Link>
-            <Link href="/create-article">CREATE ARTICLES</Link>
+            <Link href="/Analyst-home">ARTICLES</Link>
+            <Link href="/create-article-Analyst">CREATE ARTICLES</Link>
             <Link href="/">SIGN OUT</Link>
           </div>
         )}
