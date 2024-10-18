@@ -18,8 +18,8 @@ const Navbar: React.FC<NavbarProps> = ({ title, subtitle, initialPage }) => {
   return (
     <nav className="navbar">
       {/* Left: Website Title */}
-      <div className="title">
-        <Link href="/Analyst-home" className="title">SPEED</Link>
+      <div className="header">
+        <Link href="/Analyst-home" className="header">SPEED</Link>
         <div className="subtitle">{subtitle}</div> {/* Render subtitle here */}
       </div>
 
