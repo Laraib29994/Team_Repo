@@ -1,14 +1,35 @@
 .ShowArticleList {
     padding: 20px;
-    background: linear-gradient(to right, #f3eeed, #90a5c4); /* Blue gradient */
+    background: linear-gradient(90deg, #f3eeed, #90a5c4); /* Blue gradient */
   }
 
-
+.img1
+{
+  width: 90%;
+  height:210px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
   .container {
    /* max-width: 1200px;*/
     margin: auto;
   }
 
+.card-container {
+  border-radius: 10px;
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 100.2);
+  background: linear-gradient(0deg, #90a5c4 0%, rgba(17, 0, 32, -5.5) 50%);
+}
+.desc{
+  margin-left: 10px;
+}
+.desc .label {
+  font-weight: bold; /* Makes only the label bold */
+}
+.h2{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
   .row {
     display: flex;
     flex-wrap: wrap;

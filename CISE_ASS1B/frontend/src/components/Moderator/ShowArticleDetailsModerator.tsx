@@ -105,7 +105,7 @@ function ShowArticleDetails() {
             <p className='lead text-center'>View Article&apos;s Info</p>
             <hr /> <br />
           </div>
-          <div className='col-md-10 m-auto'>{ArticleItem}</div>
+
           <div className='col-md-6 m-auto'>
             <button
               type='button'
@@ -114,9 +114,18 @@ function ShowArticleDetails() {
             >
               Delete Article
             </button>
+          
+            <Link
+              href={`/edit-article/${article._id}`}
+              className='btn btn-outline-info btn-lg btn-block'
+            >
+              Edit Article
+            </Link>
           </div>
-          <div className='col-md-6 m-auto'>
-          </div>
+
+
+          <div className='col-md-10 m-auto'>{ArticleItem}</div>
+          
         </div>
       </div>
     </div>
