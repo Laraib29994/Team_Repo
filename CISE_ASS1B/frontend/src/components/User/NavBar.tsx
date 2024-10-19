@@ -33,7 +33,7 @@ const Navbar: React.FC<NavbarProps> = ({ title, subtitle, initialPage }) => {
         </button>
         {isDropdownOpen && (
           <div className="dropdown">
-            <Link href="/Moderator-home">ARTICLES</Link>
+            <Link href="/Home">ARTICLES</Link>
             <Link href="/create-article">CREATE ARTICLES</Link>
             <Link href="/">SIGN OUT</Link>
           </div>
