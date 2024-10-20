@@ -69,7 +69,7 @@ const CreateArticleComponent = () => {
                   placeholder="DOI"
                   name="DOI"
                   className="form-control"
-                  value={article.DOI}
+                  value={article.DOI || ""}
                   onChange={onChange}
                 />
               </div>
@@ -91,7 +91,7 @@ const CreateArticleComponent = () => {
                   placeholder="Volume"
                   name="volume"
                   className="form-control"
-                  value={article.volume}
+                  value={article.volume || ""}
                   onChange={onChange}
                 />
               </div>

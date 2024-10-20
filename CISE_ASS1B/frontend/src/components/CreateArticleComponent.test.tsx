@@ -1,8 +1,8 @@
 // CreateArticleComponent.test.tsx
 
 import React from "react";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
-import CreateArticleComponent from "./CreateArticle";
+import { render, screen, fireEvent, waitFor,act } from "@testing-library/react";
+import CreateArticleComponent from "./User/CreateArticle";
 
 // Mocking the useRouter hook from next/navigation
 const mockPush = jest.fn();
@@ -117,7 +117,10 @@ describe("CreateArticleComponent", () => {
       target: { value: "Short descriptor text." },
     });
 
+    // Wrap the submit event in act
+  await act(async () => {
     fireEvent.click(screen.getByRole("button", { name: /submit/i }));
+  });
 
     // Validate the API call
     expect(fetch).toHaveBeenCalledWith("http://localhost:8082/api/articles", {

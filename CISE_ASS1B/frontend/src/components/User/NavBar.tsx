@@ -28,7 +28,7 @@ const Navbar: React.FC<NavbarProps> = ({ title, subtitle, initialPage }) => {
 
       {/* Right: Dropdown Menu */}
       <div className="dropdown-container">
-        <button className="dropdown-toggle" onClick={toggleDropdown}>
+        <button className="dropdown-toggle" onClick={toggleDropdown} aria-label="Toggle dropdown menu">
         <span className={`arrow ${isDropdownOpen ? 'open' : 'closed'}`}></span>
         </button>
         {isDropdownOpen && (
