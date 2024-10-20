@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { Article, DefaultEmptyArticle } from '../Article'; // Ensure correct import path
 import Link from 'next/link';
+import '../CSS/ShowArticleDetails.css';  
 
 function ShowArticleDetails() {
   const [article, setArticle] = useState<Article>(DefaultEmptyArticle);
@@ -37,62 +38,58 @@ function ShowArticleDetails() {
       <table className='table table-hover table-dark table-striped table-bordered'>
         <tbody>
           <tr>
-            <th scope='row'>1</th>
             <td>Title</td>
             <td>{article.title}</td>
           </tr>
           <tr>
-            <th scope='row'>2</th>
             <td>Authors</td>
             <td>{article.authors}</td>
           </tr>
           <tr>
-            <th scope='row'>3</th>
+            <td>Descriptor</td>
+            <td>{article.descriptor}</td> {/* Added descriptor field */}
+          </tr>
+        </tbody>
+      </table>
+
+      <table className='table table-hover table-dark table-striped table-bordered'>
+        <tbody>
+          <tr>
             <td>DOI</td>
             <td>{article.DOI}</td>
           </tr>
           <tr>
-            <th scope='row'>4</th>
             <td>Publication Year</td>
             <td>{article.publication_year?.toString()}</td>
           </tr>
           <tr>
-            <th scope='row'>5</th>
             <td>Volume</td>
             <td>{article.volume}</td>
           </tr>
           <tr>
-            <th scope='row'>6</th>
             <td>Number</td>
             <td>{article.number}</td>
           </tr>
           <tr>
-            <th scope='row'>7</th>
             <td>Pages</td>
             <td>{article.pages}</td>
           </tr>
+          
           <tr>
-            <th scope='row'>8</th>
-            <td>Content</td>
-            <td>{article.content}</td> {/* Added content field */}
-          </tr>
-          <tr>
-            <th scope='row'>8</th>
-            <td>Descriptor</td>
-            <td>{article.descriptor}</td> {/* Added descriptor field */}
-          </tr>
-          <tr>
-            <th scope='row'>9</th>
             <td>Updated Date</td>
             <td>{article.updated_date?.toString()}</td>
           </tr>
           <tr>
-            <th scope='row'>9</th>
             <td>Status</td>
             <td>{article.status}</td>
           </tr>
         </tbody>
       </table>
+
+      <div className='contentbox'>
+      {article.content}
+      </div>
+
     </div>
   );
 

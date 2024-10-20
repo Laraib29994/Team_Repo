@@ -65,18 +65,18 @@ const QueueCard = ({ article }: IProp) => {
 
   return (
     <div className='card-container' onClick={onClick}>
-      <img
+      <img className='img1'
         src='https://images.unsplash.com/photo-1585241936939-be4099591252?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
         alt='Queue Article Image'
         height={210}
       />
       <div className='desc'>
         <h2>Title: {article.title}</h2>
-        <h3>Author/s: {article.authors}</h3>
-        <p>DOI: {article.DOI}</p>
-        <p>Pub Year: {article.publication_year ? article.publication_year.toString().split('-')[0] : 'N/A'}</p>
-        <p>Descriptor: {article.descriptor}</p>
-        <p>Status: {status}</p> {/* Display the current status of the article */}
+        <p><span className='label'>AUTHOR/S:</span> {article.authors}</p>
+      <p><span className='label'>DOI:</span> {article.DOI}</p>
+      <p><span className='label'>PUBLISH YEAR:</span> {article.publication_year ? article.publication_year.toString().split('-')[0] : 'N/A'}</p>
+      <p><span className='label'>DESCRIPTOR:</span> {article.descriptor}</p>
+        <p><span className='label'>Status: </span>{status}</p> {/* Display the current status of the article */}
 
         <div className='button-group'>
           <button onClick={handleApprove} disabled={status === 'approved'}>

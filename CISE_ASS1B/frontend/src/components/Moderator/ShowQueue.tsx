@@ -3,6 +3,7 @@ import Link from 'next/link';
 import QueueCard from './QueueCard';
 import { Article } from '../Article';
 import '../CSS/ShowQueue.css';
+import '../CSS/ShowArticleList.css';
 
 function ShowQueue() {
   const [articles, setArticles] = useState<Article[]>([]);

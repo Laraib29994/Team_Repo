@@ -1,0 +1,12 @@
+.ShowArticleDetails{
+    padding: 20px;
+    background: linear-gradient(90deg, #f3eeed, #90a5c4); /* Blue gradient */
+}
+
+.contentbox{
+    border-radius: 10px;
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 100.2);
+  background: linear-gradient(-90deg, #c4cddb73 0%, rgb(255 255 255 / 37%) 50%);
+  width:fit-content;
+  padding: 2%;
+}
