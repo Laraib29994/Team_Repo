@@ -14,7 +14,7 @@
     "moduleResolution": "node", // Change to node for better compatibility
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react", // Change to react-jsx for React 17 and above
+    "jsx": "preserve", // Change to react-jsx for React 17 and above
     "incremental": true,
     "plugins": [
       {
