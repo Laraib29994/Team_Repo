@@ -24,7 +24,7 @@ global.fetch = jest.fn(() =>
     }),
     redirected: false,
     type: "default",
-    url: "http://localhost:8082/api/articles",
+    url: `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/Articles`,
     json: () => Promise.resolve({}),
   } as Response)
 );
@@ -123,7 +123,7 @@ describe("CreateArticleComponent", () => {
   });
 
     // Validate the API call
-    expect(fetch).toHaveBeenCalledWith("http://localhost:8082/api/articles", {
+    expect(fetch).toHaveBeenCalledWith(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/Articles`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

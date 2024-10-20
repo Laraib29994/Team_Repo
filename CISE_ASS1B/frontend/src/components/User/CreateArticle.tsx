@@ -16,7 +16,7 @@ const CreateArticleComponent = () => {
     event.preventDefault();
     console.log("Submitting:", article);
 
-    fetch("http://localhost:8082/api/articles", {
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/Articles`, {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(article),

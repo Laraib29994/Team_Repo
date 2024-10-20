@@ -12,7 +12,7 @@ function AnalystHome() {
   const [showApproved, setShowApproved] = useState(true); // State for filtering approved articles
 
   useEffect(() => {
-    fetch('http://localhost:8082/api/Articles')
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/Articles`)
       .then((res) => res.json())
       .then((articles) => {
         // Filter approved and pending articles

@@ -9,7 +9,7 @@ function ShowQueue() {
   const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:8082/api/Articles')
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/Articles`)
       .then((res) => res.json())
       .then((articles) => {
         // Filter only articles with status 'pending'
