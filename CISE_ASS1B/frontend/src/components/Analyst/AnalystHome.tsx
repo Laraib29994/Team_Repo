@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import ArticleCard from './ArticleCardAnalyst';
 import { Article } from '../Article';
@@ -28,17 +28,18 @@ function AnalystHome() {
   }, []);
 
   // Filter articles based on the showApproved state
-  const filterArticles = () => {
+  const filterArticles = useCallback(() => {
     if (showApproved) {
-      setFilteredArticles(articles); // Show approved articles
+      setFilteredArticles(articles);
     } else {
-      setFilteredArticles(pendingArticles); // Show pending articles
+      setFilteredArticles(pendingArticles);
     }
-  };
+  }, [showApproved, articles, pendingArticles]); // Add articles and pendingArticles as dependencies
 
   useEffect(() => {
     filterArticles(); // Apply filter whenever showApproved state changes
-  }, [showApproved, articles, pendingArticles]);
+  }, [showApproved, filterArticles]); // Use filterArticles as a dependency
+
 
   const articleList =
     filteredArticles.length === 0
