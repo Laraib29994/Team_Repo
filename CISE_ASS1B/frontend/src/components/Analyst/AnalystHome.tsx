@@ -9,6 +9,7 @@ function AnalystHome() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [pendingArticles, setPendingArticles] = useState<Article[]>([]);
   const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);
+  const [showApproved, setShowApproved] = useState(true); // State for filtering approved articles
 
   useEffect(() => {
     fetch('http://localhost:8082/api/Articles')
@@ -26,7 +27,19 @@ function AnalystHome() {
       });
   }, []);
 
-  // Adjust the article list based on filtered articles
+  // Filter articles based on the showApproved state
+  const filterArticles = () => {
+    if (showApproved) {
+      setFilteredArticles(articles); // Show approved articles
+    } else {
+      setFilteredArticles(pendingArticles); // Show pending articles
+    }
+  };
+
+  useEffect(() => {
+    filterArticles(); // Apply filter whenever showApproved state changes
+  }, [showApproved, articles, pendingArticles]);
+
   const articleList =
     filteredArticles.length === 0
       ? <p>No matching articles found!</p>
@@ -47,6 +60,17 @@ function AnalystHome() {
             <SearchBar articles={articles} setFilteredArticles={setFilteredArticles} />
           </div>
         </div>
+
+        {/* Task Bar */}
+        <div className='taskbar'>
+          <button className='btn btn-outline-primary' onClick={() => setShowApproved(true)}>
+            Show Approved Articles
+          </button>
+          <button className='btn btn-outline-secondary' onClick={() => setShowApproved(false)}>
+            {queueButtonContent}
+          </button>
+        </div>
+
         <div className='list'>{articleList}</div>
       </div>
     </div>
