@@ -11,7 +11,7 @@ function ShowArticleList() {
   const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);
 
   useEffect(() => {
-    fetch('${process.env.NEXT_PUBLIC_BACKEND_URL}/api/Articles')
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/Articles`)
       .then((res) => res.json())
       .then((articles) => {
         // Filter approved and pending articles
