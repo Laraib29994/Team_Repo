@@ -83,6 +83,10 @@ function ShowArticleDetails() {
             <td>Status</td>
             <td>{article.status}</td>
           </tr>
+          <tr>
+            <td>Rating</td>
+            <td>{article.rating}</td>
+          </tr>
         </tbody>
       </table>
 

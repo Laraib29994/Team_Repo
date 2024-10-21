@@ -74,6 +74,31 @@ export class ArticleController {
     }
   }
 
+/*
+  @Put('/:id')
+  async updateArticle(
+    @Param('id') id: string,
+    @Body() createArticleDto: CreateArticleDto, // Ensure rating comes in here
+  ) {
+    try {
+      console.log('Received Data:', createArticleDto); // Debugging: Ensure rating arrives
+  
+      const updatedArticle = await this.articleService.update(id, createArticleDto);
+  
+      if (!updatedArticle) {
+        throw new HttpException(`Article with ID ${id} not found.`, HttpStatus.NOT_FOUND);
+      }
+  
+      return { message: 'Article updated successfully', article: updatedArticle };
+    } catch (error) {
+      console.error('Update Error:', error); // Log errors
+      throw new HttpException('Unable to update this article', HttpStatus.BAD_REQUEST);
+    }
+  }
+*/
+
+  
+  
   // Update an article
   @Put('/:id')
   async updateArticle(
@@ -95,6 +120,8 @@ export class ArticleController {
     }
   }
 
+    
+
   // Delete an article by id
   @Delete('/:id')
   async deleteArticle(@Param('id') id: string) {
@@ -111,4 +138,42 @@ export class ArticleController {
       );
     }
   }
+
+  /*
+  @Put('/:id')
+  async updateArticle(
+    @Param('id') id: string,
+    @Body() createArticleDto: CreateArticleDto,
+  ) {
+    try {
+      // Check if the request body contains a rating field
+      if (createArticleDto.rating !== undefined) {
+        // First, find the article by ID
+        const article = await this.articleService.findOne(id);
+        if (article) {
+          // If the article does not have a rating, set it
+          if (article.rating === undefined) {
+            await this.articleService.updateRating(id, createArticleDto.rating);
+          } else {
+            // If rating exists, update it
+            await this.articleService.updateRating(id, createArticleDto.rating);
+          }
+        }
+      }
+      
+      // Update other article fields (if any)
+      await this.articleService.update(id, createArticleDto); 
+  
+      return { message: 'Article updated successfully' };
+    } catch {
+      throw new HttpException(
+        {
+          status: HttpStatus.BAD_REQUEST,
+          error: 'Unable to update this article',
+        },
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+  }
+*/
 }

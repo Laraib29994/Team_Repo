@@ -12,4 +12,5 @@ export class CreateArticleDto {
   updated_date?: Date; // Updated date (optional for consistency)
   status?: string; //added status for que
   descriptor?: string; //article descriptor
+  rating?: number;
 }

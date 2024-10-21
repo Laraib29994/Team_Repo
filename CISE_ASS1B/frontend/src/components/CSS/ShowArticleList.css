@@ -123,3 +123,25 @@
 .signOut:hover {
     background-color: darkred; /* Darker red on hover */
 }
+
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.star {
+  font-size: 30px;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  color: lightgray;
+}
+
+.star.filled {
+  color: gold; /* Star color when filled */
+}
+
+.star:hover {
+  color: orange; /* Star color on hover */
+}

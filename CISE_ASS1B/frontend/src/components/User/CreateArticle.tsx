@@ -136,9 +136,7 @@ const CreateArticleComponent = () => {
                   value={article.descriptor || ''} // Updated to include content
                   onChange={onChange}
                 />
-              </div>
-
-              
+              </div>              
               <button
                 type="submit"
                 className="btn btn-outline-warning btn-block mt-4 mb-4 w-100 btn-active-bg"

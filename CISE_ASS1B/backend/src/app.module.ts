@@ -4,6 +4,9 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ArticleModule } from './api/Articles/article.module';
 import { ConfigModule } from '@nestjs/config';
+import { ValidationPipe } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
+
 
 @Module({
   imports: [
@@ -15,3 +18,10 @@ import { ConfigModule } from '@nestjs/config';
   providers: [AppService],
 })
 export class AppModule {}
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(new ValidationPipe()); // Ensures correct payload validation
+  await app.listen(3000);
+}
+bootstrap();

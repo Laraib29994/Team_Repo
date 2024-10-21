@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Date, HydratedDocument } from 'mongoose';
+import { Date, HydratedDocument, Document, model } from 'mongoose';
+
 
 export type ArticleDocument = HydratedDocument<Article>;
 
@@ -41,6 +42,9 @@ export class Article {
     default: 'Pending'
   })
   status: string;
+
+  @Prop({ type: Number, default: 0 })
+  rating: number;
 }
 
 export const ArticleSchema = SchemaFactory.createForClass(Article);

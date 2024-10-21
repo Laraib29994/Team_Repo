@@ -11,6 +11,7 @@ export type Article = {
     updated_date?: Date;             // Date when the article was last updated (optional Date)
     status?: string;                 // Content of the article (optional string)
     descriptor?: string;             // Article descriptor
+    rating?: number;
 };
 
 export const DefaultEmptyArticle: Article = {
@@ -26,4 +27,5 @@ export const DefaultEmptyArticle: Article = {
     descriptor: '',                     // Default empty string for descriptor
     updated_date: undefined,         // Default undefined for updated date
     status: 'pending',                     // Default empty string for content
+    rating: undefined,
 };
